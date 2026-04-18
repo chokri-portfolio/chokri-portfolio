@@ -27,7 +27,68 @@ body{
 }
 
 /* ─── GRAIN TEXTURE ─────────────────────────────────── */
-body::before{
+body:<script>
+// ============================================
+// ADMIN / PUBLIC MODE - Seul vous pouvez modifier
+// Votre username GitHub: chokri-portfolio
+// ============================================
+
+(async function() {
+    const YOUR_GITHUB_USERNAME = "chokri-portfolio";
+    let isAdmin = false;
+    
+    try {
+        // Vérifier si l'utilisateur est connecté à GitHub
+        const response = await fetch('https://api.github.com/user', {
+            credentials: 'include'
+        });
+        if (response.ok) {
+            const user = await response.json();
+            isAdmin = (user.login === YOUR_GITHUB_USERNAME);
+        }
+    } catch(e) {
+        isAdmin = false;
+    }
+    
+    // Fonction pour cacher les éléments d'administration
+    function hideAdminElements() {
+        const selectors = [
+            '.add-event-btn', '.edit-btn', '.delete-btn', 
+            '.admin-only', '[data-admin]', '.add-button',
+            '.event-edit-btn', '.event-delete-btn'
+        ];
+        selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => {
+                if (el) el.style.display = 'none';
+            });
+        });
+        
+        // Cacher aussi le bouton "Add event or project"
+        const addButtons = document.querySelectorAll('button, a, div');
+        addButtons.forEach(btn => {
+            if (btn.textContent && btn.textContent.includes('Add event')) {
+                btn.style.display = 'none';
+            }
+        });
+    }
+    
+    // Si pas admin, cacher tout
+    if (!isAdmin) {
+        hideAdminElements();
+        console.log('Mode public - boutons cachés');
+    } else {
+        console.log('Mode admin - vous pouvez modifier');
+    }
+    
+    // Ajouter un petit indicateur visuel pour vous (optionnel)
+    if (isAdmin) {
+        const indicator = document.createElement('div');
+        indicator.textContent = '🔒 Mode édition actif - Les visiteurs ne voient pas les boutons';
+        indicator.style.cssText = 'position:fixed; bottom:10px; right:10px; background:#B81A2A; color:white; padding:6px 12px; border-radius:20px; font-size:11px; z-index:9999;';
+        document.body.appendChild(indicator);
+    }
+})();
+</script>:before{
   content:'';
   position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
