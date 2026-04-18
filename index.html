@@ -2,304 +2,535 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Chokri Hfaiedh – Master Resume | Food Safety Inspector · MOPH Qatar · IRCA FSSC 22000 V6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chokri Hfaiedh — Food Safety Inspector · MOPH Qatar · IRCA FSSC 22000 V6</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --m:#6b1c24;
-  --mm:#8b2635;
-  --mp:#f9f0f1;
-  --g:#9a7209;
-  --gm:#b8860b;
-  --gl:#d4a828;
-  --gp:#fdf7e8;
-  --gb:#e8d090;
-  --ink:#16130f;
-  --ink2:#2c2820;
-  --ink3:#443e36;
-  --mid:#6b6258;
-  --mut:#9a9088;
-  --fnt:#c8c0b4;
-  --rl:#e8e0d4;
-  --bg:#f5f0e8;
-  --pg:#fffdf8;
-}
+/* RESET & BASE */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-body{background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);padding:44px 20px;line-height:1.6;}
-@media print{body{background:white;padding:0;}.resume{box-shadow:none;border-radius:0;max-width:100%;}.pbt{display:none!important;}}
-.pbt{display:block;margin:0 auto 16px;max-width:1100px;text-align:right;}
-.pbt button{background:var(--m);color:white;border:none;padding:9px 20px;border-radius:5px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background 0.2s;}
-.pbt button:hover{background:var(--mm);}
-.resume{max-width:1100px;margin:0 auto;background:var(--pg);border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,0.04),0 20px 60px rgba(107,28,36,0.10),0 0 0 1px rgba(0,0,0,0.05);overflow:hidden;}
-
-/* HEADER */
-.hd{display:grid;grid-template-columns:1fr 260px;background:var(--m);position:relative;overflow:hidden;}
-.hd::before{content:'';position:absolute;right:-100px;top:-100px;width:380px;height:380px;border-radius:50%;border:55px solid rgba(255,255,255,0.04);pointer-events:none;}
-.hd::after{content:'';position:absolute;right:200px;bottom:-70px;width:200px;height:200px;border-radius:50%;background:rgba(184,134,11,0.07);pointer-events:none;}
-.hd-l{padding:44px 46px 38px;position:relative;z-index:1;}
-.hd-ey{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gl);margin-bottom:10px;opacity:0.82;}
-.hd-name{font-family:'Cormorant Garamond',serif;font-size:3.9rem;font-weight:600;line-height:0.92;color:white;letter-spacing:-0.5px;margin-bottom:14px;}
-.hd-name em{font-style:italic;color:var(--gl);font-weight:400;}
-.hd-bar{width:44px;height:2px;background:var(--gl);margin-bottom:14px;opacity:0.65;}
-.hd-ttl{font-size:0.84rem;font-weight:400;color:rgba(255,255,255,0.76);line-height:1.65;max-width:440px;}
-.hd-r{background:rgba(0,0,0,0.16);border-left:1px solid rgba(255,255,255,0.07);padding:44px 32px 38px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;}
-.hd-ct{display:flex;flex-direction:column;gap:12px;}
-.hd-cr{display:flex;align-items:center;gap:10px;font-size:0.78rem;color:rgba(255,255,255,0.74);}
-.hd-cr i{width:26px;height:26px;background:rgba(255,255,255,0.07);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:0.68rem;color:var(--gl);flex-shrink:0;}
-.hd-bgs{display:flex;flex-direction:column;gap:7px;margin-top:22px;}
-.hd-bg{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:4px;padding:5px 10px;font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.70);letter-spacing:0.2px;}
-.hd-bg i{color:var(--gl);font-size:0.67rem;}
-.stripe{height:3px;background:linear-gradient(90deg,var(--gm),var(--gl),var(--gm));}
-
-/* BODY */
-.body{display:grid;grid-template-columns:270px 1fr;}
-.sb{background:#f7f2ea;border-right:1px solid var(--rl);padding:34px 24px;}
-.sb-sec{margin-bottom:30px;}
-.sb-t{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gm);margin-bottom:13px;display:flex;align-items:center;gap:8px;}
-.sb-t::after{content:'';flex:1;height:1px;background:var(--gb);}
-.spill{display:flex;align-items:flex-start;gap:7px;margin-bottom:8px;font-size:0.78rem;color:var(--ink3);line-height:1.45;}
-.spill::before{content:'';width:5px;height:5px;background:var(--gm);border-radius:50%;margin-top:5px;flex-shrink:0;}
-.sb-cert{border-bottom:1px solid var(--rl);padding:9px 0;}
-.sb-cert:last-child{border-bottom:none;}
-.sb-cn{font-size:0.77rem;font-weight:600;color:var(--ink2);line-height:1.38;margin-bottom:3px;}
-.sb-cm{display:flex;justify-content:space-between;align-items:center;gap:5px;flex-wrap:wrap;}
-.sb-ci{font-size:0.69rem;color:var(--mut);}
-.sb-cd{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--gm);white-space:nowrap;flex-shrink:0;}
-.lang-i{margin-bottom:11px;}
-.lang-top{display:flex;justify-content:space-between;margin-bottom:4px;}
-.lang-n{font-size:0.79rem;font-weight:600;color:var(--ink2);}
-.lang-l{font-size:0.71rem;color:var(--mut);}
-.lang-tr{height:3px;background:var(--rl);border-radius:2px;overflow:hidden;}
-.lang-fi{height:100%;background:linear-gradient(90deg,var(--m),var(--gm));border-radius:2px;}
-.it-w{display:flex;flex-wrap:wrap;gap:5px;}
-.it{background:white;border:1px solid var(--gb);border-radius:3px;padding:3px 8px;font-size:0.69rem;font-weight:600;color:var(--ink3);}
-.sb-ref{padding:9px 11px;background:white;border-left:3px solid var(--gm);border-radius:0 5px 5px 0;margin-bottom:9px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
-.sb-ref .rn{font-weight:700;font-size:0.8rem;color:var(--m);}
-.sb-ref .rt{font-size:0.71rem;color:var(--gm);font-style:italic;margin:2px 0;}
-.sb-ref .ro{font-size:0.68rem;color:var(--mut);line-height:1.4;}
-.sb-aw{background:white;border:1px solid var(--gb);border-top:3px solid var(--gm);border-radius:0 0 5px 5px;padding:9px 11px;margin-bottom:9px;}
-.sb-aw .ab{font-size:0.66rem;font-weight:700;color:var(--gm);letter-spacing:0.4px;text-transform:uppercase;margin-bottom:4px;}
-.sb-aw .at{font-size:0.77rem;font-weight:600;color:var(--ink2);margin-bottom:3px;line-height:1.32;}
-.sb-aw .ay{font-size:0.66rem;color:var(--mut);font-family:'JetBrains Mono',monospace;}
-.main{padding:34px 40px;}
-.prf{background:var(--gp);border-left:3px solid var(--gm);border-radius:0 7px 7px 0;padding:15px 18px;margin-bottom:30px;font-size:0.83rem;line-height:1.8;color:var(--ink3);}
-.prf strong{color:var(--m);font-weight:700;}
-.sec{margin-bottom:28px;}
-.sh{display:flex;align-items:center;gap:11px;margin-bottom:16px;padding-bottom:9px;border-bottom:1.5px solid var(--rl);}
-.sh-ico{width:28px;height:28px;background:var(--m);border-radius:5px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.7rem;flex-shrink:0;}
-.sh-ttl{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--m);letter-spacing:0.2px;}
-.sh-ln{flex:1;height:1px;background:linear-gradient(90deg,var(--gb),transparent);}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-bottom:20px;}
-.stat-c{background:var(--gp);border:1px solid var(--gb);border-radius:7px;padding:8px 6px;text-align:center;}
-.stat-n{font-size:1.1rem;font-weight:800;color:var(--m);}
-.stat-l{font-size:0.62rem;color:var(--mut);text-transform:uppercase;}
-.events-compact{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:16px;}
-.event-item{background:white;border:1px solid var(--rl);border-radius:7px;padding:10px 12px;}
-.event-cat{display:inline-block;font-size:0.55rem;font-weight:700;padding:2px 8px;border-radius:30px;margin-bottom:6px;}
-.cat-fifa{background:#185fa5;color:white;}
-.cat-un{background:#0f6e56;color:white;}
-.cat-fia{background:#854f0b;color:white;}
-.cat-gulf{background:#993556;color:white;}
-.cat-moph{background:#533ab7;color:white;}
-.event-name{font-size:0.78rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
-.event-date{font-size:0.65rem;color:var(--mut);}
-.event-stats{font-size:0.6rem;color:var(--gm);margin-top:4px;}
-.job{margin-bottom:24px;position:relative;padding-left:18px;}
-.job::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gm),transparent);}
-.j-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:3px;flex-wrap:wrap;}
-.j-ro{font-size:0.9rem;font-weight:700;color:var(--ink);line-height:1.3;}
-.j-dt{font-family:'JetBrains Mono',monospace;font-size:0.67rem;background:var(--mp);color:var(--m);padding:3px 9px;border-radius:3px;white-space:nowrap;font-weight:500;border:1px solid rgba(107,28,36,0.11);flex-shrink:0;}
-.j-or{font-size:0.78rem;color:var(--gm);font-style:italic;font-weight:500;margin-bottom:9px;display:flex;align-items:center;gap:5px;}
-ul.bl{list-style:none;padding:0;}
-ul.bl li{font-size:0.79rem;color:var(--ink3);line-height:1.7;padding-left:13px;position:relative;margin-bottom:4px;}
-ul.bl li::before{content:'›';position:absolute;left:0;color:var(--gm);font-size:0.9rem;line-height:1.62;}
-.tr{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;}
-.tg{background:var(--gp);border:1px solid var(--gb);border-radius:3px;padding:2px 8px;font-size:0.68rem;font-weight:600;color:var(--ink3);}
-.edu-i{margin-bottom:13px;padding-left:14px;border-left:2px solid var(--gb);}
-.edu-d{font-size:0.87rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
-.edu-s{font-size:0.77rem;color:var(--gm);font-style:italic;margin-bottom:2px;}
-.edu-y{font-family:'JetBrains Mono',monospace;font-size:0.66rem;color:var(--mut);}
-.edu-th{font-size:0.72rem;color:var(--mut);font-style:italic;margin-top:2px;}
-.ft{background:var(--m);padding:12px 44px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.ft-l{font-family:'Cormorant Garamond',serif;font-size:0.92rem;font-style:italic;color:rgba(255,255,255,0.60);}
-.ft-r{font-family:'JetBrains Mono',monospace;font-size:0.63rem;color:var(--gl);letter-spacing:0.4px;}
-@media(max-width:800px){
-  .body,.hd{grid-template-columns:1fr;}
-  .hd-r{border-left:none;border-top:1px solid rgba(255,255,255,0.08);}
-  .main{padding:26px 22px;}
-  .sb{padding:26px 18px;}
+:root{
+  --maroon:#8B1A2A;--maroon2:#B02235;--maroon-dark:#500E18;
+  --gold:#C8920A;--gold2:#E8B420;--gold-pale:#FDF6E3;
+  --ink:#0F0A06;--ink2:#1E150D;--ink3:#3D2E1E;
+  --warm:#7A6248;--mid:#B8A898;--pale:#F2EDE6;--paler:#FAF7F3;
+  --white:#FFFFFF;
+  --radius:8px;--radius-lg:14px;
 }
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  background:#FAF7F3;
+  font-family:'Outfit',sans-serif;
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.6;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  background:linear-gradient(160deg,var(--maroon-dark) 0%,var(--maroon) 45%,#2A0A14 100%);
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 40px 60px;
+  overflow:hidden;
+}
+.hero-noise{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity:.5;pointer-events:none;
+}
+.hero-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  pointer-events:none;
+}
+.orb1{width:500px;height:500px;background:rgba(200,146,10,.12);right:-100px;top:-100px;}
+.orb2{width:300px;height:300px;background:rgba(139,26,42,.4);left:-80px;bottom:-50px;}
+.orb3{width:200px;height:200px;background:rgba(232,180,32,.08);left:30%;top:20%;}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold2);}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,6rem);
+  font-weight:900;
+  color:#fff;
+  line-height:.95;
+  letter-spacing:-.03em;
+  margin-bottom:8px;
+}
+.hero-name em{font-style:italic;color:var(--gold2);}
+.hero-role{
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  color:rgba(255,255,255,.65);
+  font-weight:300;
+  letter-spacing:.02em;
+  margin-bottom:32px;
+}
+.hero-role strong{color:rgba(255,255,255,.85);font-weight:500;}
+.hero-creds{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;}
+.cred{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:.78rem;
+  color:rgba(255,255,255,.8);
+  letter-spacing:.02em;
+}
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.08);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  max-width:700px;
+}
+.hstat{
+  padding:20px 16px;
+  background:rgba(0,0,0,.2);
+  text-align:center;
+}
+.hstat:hover{background:rgba(255,255,255,.05);}
+.hstat-n{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--gold2);
+  line-height:1;
+  display:block;margin-bottom:4px;
+}
+.hstat-l{font-size:.7rem;color:rgba(255,255,255,.55);letter-spacing:.5px;text-transform:uppercase;}
+.hero-contact{
+  position:absolute;top:40px;right:40px;
+  text-align:right;
+  z-index:1;
+}
+.contact-link{
+  display:block;font-size:.8rem;
+  color:rgba(255,255,255,.55);
+  text-decoration:none;margin-bottom:4px;
+  transition:color .2s;
+}
+.contact-link:hover{color:var(--gold2);}
+.scroll-hint{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:rgba(255,255,255,.3);font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
+}
+.scroll-arrow{width:1px;height:40px;background:rgba(255,255,255,.2);position:relative;overflow:hidden;}
+.scroll-arrow::after{
+  content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
+  background:var(--gold2);
+  animation:scrollAnim 1.8s ease-in-out infinite;
+}
+@keyframes scrollAnim{0%{top:-100%;}100%{top:200%;}}
+
+/* SECTIONS */
+.section{padding:80px 40px;max-width:1100px;margin:0 auto;}
+.section-full{padding:80px 40px;background:var(--white);}
+.section-full .inner{max-width:1100px;margin:0 auto;}
+.sec-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:700;color:var(--maroon);
+  line-height:1.1;margin-bottom:16px;
+}
+.sec-title em{font-style:italic;}
+.sec-rule{width:60px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold2));border-radius:2px;margin-bottom:24px;}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:0;bottom:0;
+  width:1px;background:linear-gradient(to bottom,var(--gold2),transparent);
+}
+.titem{position:relative;margin-bottom:32px;}
+.titem::before{
+  content:'';position:absolute;left:-28px;top:5px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--maroon);
+  box-shadow:0 0 0 3px rgba(139,26,42,.15);
+}
+.titem-period{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:1px;color:var(--gold);margin-bottom:4px;}
+.titem-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.titem-org{font-size:.82rem;color:var(--maroon);font-weight:500;margin-bottom:6px;}
+.titem-desc{font-size:.82rem;color:var(--warm);line-height:1.65;}
+
+/* CERT GRID */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.cert-item{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  border-left:3px solid var(--gold2);
+}
+.cert-name{font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.35;}
+.cert-issuer{font-size:.72rem;color:var(--warm);}
+.cert-date{font-size:.7rem;color:var(--gold);font-family:'DM Mono',monospace;margin-top:4px;}
+
+/* EVENTS COMPACT GRID */
+.events-compact{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+.event-card{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--radius-lg);
+  padding:18px 20px;
+  transition:all .2s;
+  cursor:default;
+}
+.event-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 32px rgba(139,26,42,.1);
+  border-color:rgba(139,26,42,.2);
+}
+.event-cat{
+  display:inline-block;
+  padding:3px 10px;
+  border-radius:999px;
+  font-family:'DM Mono',monospace;
+  font-size:.62rem;
+  font-weight:600;
+  letter-spacing:.5px;
+  margin-bottom:12px;
+}
+.cat-FIFA{background:#185fa5;color:#fff;}
+.cat-UN{background:#0f6e56;color:#fff;}
+.cat-FIA{background:#854f0b;color:#fff;}
+.cat-Gulf{background:#993556;color:#fff;}
+.cat-MOPH{background:#533ab7;color:#fff;}
+.cat-Research{background:#8b1a2a;color:#fff;}
+.event-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:6px;
+  line-height:1.3;
+}
+.event-date{
+  font-size:.7rem;
+  color:var(--mid);
+  margin-bottom:10px;
+  font-family:'DM Mono',monospace;
+}
+.event-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid rgba(0,0,0,.05);
+}
+.event-stat{
+  font-size:.7rem;
+  color:var(--maroon);
+  font-weight:600;
+}
+.event-stat span{font-weight:400;color:var(--mid);margin-right:4px;}
+
+/* AWARDS */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.award-card{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--radius-lg);
+  padding:16px 18px;
+  border-left:4px solid var(--gold2);
+}
+.award-icon{font-size:1.6rem;margin-bottom:8px;}
+.award-title{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.award-venue{font-size:.72rem;color:var(--gold);margin-bottom:6px;}
+.award-desc{font-size:.75rem;color:var(--warm);line-height:1.5;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start;}
+.about-photo-wrap{position:relative;}
+.about-photo{
+  width:100%;aspect-ratio:4/5;
+  border-radius:var(--radius-lg);
+  background:linear-gradient(135deg,var(--pale),var(--mid));
+  overflow:hidden;position:relative;
+}
+.about-photo-placeholder{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;color:var(--mid);
+}
+.about-accent{
+  position:absolute;
+  bottom:-16px;right:-16px;
+  width:80px;height:80px;
+  background:var(--gold2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:.8rem;font-weight:700;color:var(--maroon-dark);
+  text-align:center;line-height:1.2;
+}
+.about-bio p{font-size:.95rem;color:var(--ink3);line-height:1.8;margin-bottom:14px;}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.atag{
+  padding:5px 12px;border-radius:999px;
+  font-size:.75rem;font-weight:500;
+  border:1px solid rgba(139,26,42,.2);color:var(--maroon);
+}
+
+/* CONTACT STRIP */
+.contact-strip{
+  background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));
+  padding:60px 40px;color:#fff;
+}
+.contact-strip .inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;}
+.contact-left .ct{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;}
+.contact-left .cs{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:6px;}
+.contact-links{display:flex;flex-direction:column;gap:10px;}
+.ct-link{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;transition:color .2s;}
+.ct-link:hover{color:var(--gold2);}
+.ct-link-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+footer{
+  background:var(--ink);
+  padding:24px 40px;
+  text-align:center;
+  font-size:.75rem;color:rgba(255,255,255,.35);
+}
+
+/* NAV */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:14px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background .3s,backdrop-filter .3s;
+}
+.site-nav.scrolled{
+  background:rgba(15,10,6,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:rgba(255,255,255,.9);letter-spacing:.02em;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:24px;}
+.nav-link{
+  font-size:.78rem;color:rgba(255,255,255,.55);
+  text-decoration:none;font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-link:hover{color:var(--gold2);}
+
+@media(max-width:768px){
+  .hero{padding:80px 24px 60px;}
+  .hero-contact{display:none;}
+  .section{padding:56px 24px;}
+  .section-full{padding:56px 24px;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-photo-wrap{max-width:280px;}
+  .site-nav{padding:12px 24px;}
+  .contact-strip{padding:48px 24px;}
+  .events-compact{grid-template-columns:1fr;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-inner > *{animation:fadeUp .7s ease both;}
+.hero-eyebrow{animation-delay:.1s;}
+.hero-name{animation-delay:.2s;}
+.hero-role{animation-delay:.3s;}
+.hero-creds{animation-delay:.4s;}
+.hero-stats{animation-delay:.5s;}
 </style>
 </head>
 <body>
-<div class="pbt"><button onclick="window.print()"><i class="fas fa-print"></i> Print / Save as PDF</button></div>
-<div class="resume">
-  <div class="hd">
-    <div class="hd-l">
-      <div class="hd-ey">Food Safety · Environmental Health · Qatar</div>
-      <div class="hd-name">Chokri<br><em>Hfaiedh</em></div>
-      <div class="hd-bar"></div>
-      <div class="hd-ttl">Food Safety Inspector · Regulatory Compliance Specialist<br>Environmental Public Health · Hospital Hygiene Oversight</div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="#" class="nav-logo">Chokri Hfaiedh</a>
+  <div class="nav-links">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#events" class="nav-link">Events</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+  <div class="hero-contact">
+    <a href="mailto:chokrihfaid@gmail.com" class="contact-link">chokrihfaid@gmail.com</a>
+    <a href="tel:+97439969256" class="contact-link">+974 3996 9256 (Qatar)</a>
+    <a href="tel:+21641516517" class="contact-link">+216 41 516 517 (Tunisia)</a>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Food Safety Inspector · Environmental Health</div>
+    <h1 class="hero-name">Chokri<br><em>Hfaiedh</em></h1>
+    <p class="hero-role">IRCA Lead Auditor FSSC 22000 V6 · <strong>MoPH Qatar Active Inspector</strong> · MSc Environmental Public Health</p>
+    <div class="hero-creds">
+      <span class="cred">IRCA Lead Auditor FSSC 22000 V6</span>
+      <span class="cred">MSc Environmental Public Health</span>
+      <span class="cred">MoPH Qatar Active Inspector</span>
+      <span class="cred">Healthcare Accreditation · INASanté</span>
+      <span class="cred">Doha, Qatar / Gafsa, Tunisia</span>
     </div>
-    <div class="hd-r">
-      <div class="hd-ct">
-        <div class="hd-cr"><i class="fas fa-phone-alt"></i> +974 3996 9256</div>
-        <div class="hd-cr"><i class="fas fa-envelope"></i> chokrihfaid@gmail.com</div>
-        <div class="hd-cr"><i class="fas fa-map-marker-alt"></i> Doha, Qatar / Gafsa, Tunisia</div>
-        <div class="hd-cr"><i class="fas fa-globe"></i> Arabic · French · English</div>
-        <div class="hd-cr"><i class="fas fa-calendar-alt"></i> Born 14 March 1989 · Tunisian</div>
-      </div>
-      <div class="hd-bgs">
-        <div class="hd-bg"><i class="fas fa-certificate"></i> IRCA Lead Auditor – FSSC 22000 V6</div>
-        <div class="hd-bg"><i class="fas fa-id-badge"></i> MOPH Qatar Active Inspector</div>
-        <div class="hd-bg"><i class="fas fa-graduation-cap"></i> MSc Environmental Public Health</div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">11+</span><span class="hstat-l">Years</span></div>
+      <div class="hstat"><span class="hstat-n">571</span><span class="hstat-l">FIFA Insp.</span></div>
+      <div class="hstat"><span class="hstat-n">1,366</span><span class="hstat-l">Samples</span></div>
+      <div class="hstat"><span class="hstat-n">5,550kg</span><span class="hstat-l">Seized</span></div>
+      <div class="hstat"><span class="hstat-n">200+</span><span class="hstat-l">Trained</span></div>
+      <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Events</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+  <div class="sec-eyebrow">// Professional Profile</div>
+  <h2 class="sec-title">About <em>Me</em></h2>
+  <div class="sec-rule"></div>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <div class="about-photo"><div class="about-photo-placeholder"><span style="font-size:40px;opacity:.3">👤</span><span style="font-size:.75rem;color:var(--mid);">Chokri Hfaiedh</span></div></div>
+      <div class="about-accent">11+<br>Years</div>
+    </div>
+    <div class="about-bio">
+      <p>Results-driven, dual-competency specialist with <strong>11+ years</strong> of progressive experience in Food Safety Inspection, Infection Prevention &amp; Control (IPC), and Environmental Public Health across Tunisia and Qatar. Currently deployed at <strong>MoPH Qatar</strong> food safety operations through TUV Nord Gulf.</p>
+      <p>Demonstrated expertise in risk-based food safety audits, HACCP system implementation, hospital hygiene oversight, waterborne pathogen control, and regulatory compliance. Holds IRCA Lead Auditor certification (FSSC 22000 V6), MSc in Environmental Public Health, and Healthcare Accreditation Program (INASanté 2018). Pursuing <strong>Master M2 — Statistics &amp; Data Analysis in Health Sciences (2026)</strong> at Faculty of Medicine of Sfax.</p>
+      <p>Deployed at 7 major international events including FIFA U-17 World Cup, FIFA Arab Cup, FIFA Intercontinental Cup, Gulf Cup U-17, 2nd UN Summit Doha, FIA World Endurance Championship, and WISE 2025.</p>
+      <div class="about-tags">
+        <span class="atag">Food Safety Inspection</span><span class="atag">HACCP</span><span class="atag">IPC</span>
+        <span class="atag">Legionella</span><span class="atag">ISO 22000</span><span class="atag">FSSC 22000</span>
+        <span class="atag">E-WATHEQ</span><span class="atag">Risk-Based Inspection</span><span class="atag">Arabic · French · English</span>
       </div>
     </div>
   </div>
-  <div class="stripe"></div>
-  <div class="body">
-    <div class="sb">
-      <div class="sb-sec"><div class="sb-t">Core Competencies</div>
-        <div class="spill">Risk-Based Inspection (MOPH/GSO)</div><div class="spill">HACCP / ISO 22000 / FSSC 22000</div>
-        <div class="spill">E-WATHEQ & EMS Platforms</div><div class="spill">New Establishment Licensing</div>
-        <div class="spill">Food & Water Sampling</div><div class="spill">Foodborne Outbreak Investigation</div>
-        <div class="spill">Export Certification (Codex/EU)</div><div class="spill">Hospital Hygiene Inspection</div>
-        <div class="spill">Legionella & Water Quality Monitoring</div><div class="spill">Indoor Air Quality Assessment</div>
-        <div class="spill">Regulatory & Quarterly Reporting</div><div class="spill">Healthcare Waste Management</div>
-        <div class="spill">Public Health Training & Campaigns</div>
-      </div>
-      <div class="sb-sec"><div class="sb-t">Key Stats</div>
-        <div class="stat-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-          <div class="stat-c"><div class="stat-n">11+</div><div class="stat-l">Years</div></div>
-          <div class="stat-c"><div class="stat-n">571</div><div class="stat-l">FIFA Insp.</div></div>
-          <div class="stat-c"><div class="stat-n">1,366</div><div class="stat-l">Samples</div></div>
-          <div class="stat-c"><div class="stat-n">5,550kg</div><div class="stat-l">Seized</div></div>
-          <div class="stat-c"><div class="stat-n">200+</div><div class="stat-l">Trained</div></div>
-          <div class="stat-c"><div class="stat-n">14</div><div class="stat-l">HCFs</div></div>
-          <div class="stat-c"><div class="stat-n">7</div><div class="stat-l">Events</div></div>
-          <div class="stat-c"><div class="stat-n">25+</div><div class="stat-l">Certs</div></div>
-        </div>
-      </div>
-      <div class="sb-sec"><div class="sb-t">Certifications</div>
-        <div class="sb-cert"><div class="sb-cn">IRCA Lead Auditor – FSSC 22000 V6</div><div class="sb-cm"><span class="sb-ci">HKV Academy</span><span class="sb-cd">→ Nov 2029</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Advanced Risk-Based Food Safety – Level 5</div><div class="sb-cm"><span class="sb-ci">TSI Approved</span><span class="sb-cd">2025</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">CEC – Statistics & Data Analysis in Health Sciences</div><div class="sb-cm"><span class="sb-ci">Continuing Education</span><span class="sb-cd">2025</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">CEC – Health Law & Healthcare Ethics</div><div class="sb-cm"><span class="sb-ci">Inst. Nursing Sciences, Sfax</span><span class="sb-cd">2021</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">QSE/SMSDA Audit – ISO 9001/14001/45001/22000/19011</div><div class="sb-cm"><span class="sb-ci">Professional Dev.</span><span class="sb-cd">2016</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Healthcare Accreditation Program (INASanté)</div><div class="sb-cm"><span class="sb-ci">INASanté</span><span class="sb-cd">2018</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">ISO 22000:2018 Food Safety Management System</div><div class="sb-cm"><span class="sb-ci">Qualiconsult/DHMPE</span><span class="sb-cd">2019</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Foodborne Outbreak Investigation</div><div class="sb-cm"><span class="sb-ci">Tunisian MOH</span><span class="sb-cd">2019</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">HACCP & Food Hygiene Prerequisite Programs</div><div class="sb-cm"><span class="sb-ci">DHMPE, Tunisia</span><span class="sb-cd">2017</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Drinking Water Safety Assessment</div><div class="sb-cm"><span class="sb-ci">UNICEF/DHMPE</span><span class="sb-cd">2018</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Rural Drinking Water Management</div><div class="sb-cm"><span class="sb-ci">Agriculture & AfDB</span><span class="sb-cd">2021</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">E-WATHEQ – Registration & Advanced Ops</div><div class="sb-cm"><span class="sb-ci">MOPH Qatar</span><span class="sb-cd">2024</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Local Risk-Based Inspection & Code of Practice</div><div class="sb-cm"><span class="sb-ci">MOPH Qatar</span><span class="sb-cd">Mar 2024</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Sampling Procedures & Cleaning/Disinfection</div><div class="sb-cm"><span class="sb-ci">MOPH Qatar</span><span class="sb-cd">Aug 2025</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">ISO 17020:2012 Conformity Assessment & PPE</div><div class="sb-cm"><span class="sb-ci">TUV Nord Gulf</span><span class="sb-cd">2024</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">Export Technical Control & Legal Frameworks</div><div class="sb-cm"><span class="sb-ci">INSSPA/NFSA</span><span class="sb-cd">2022–2023</span></div></div>
-        <div class="sb-cert"><div class="sb-cn">COVID-19 Response Preparedness Plan</div><div class="sb-cm"><span class="sb-ci">DRS Gafsa</span><span class="sb-cd">2020</span></div></div>
-      </div>
-      <div class="sb-sec"><div class="sb-t">Languages</div>
-        <div class="lang-i"><div class="lang-top"><span class="lang-n">Arabic</span><span class="lang-l">Native</span></div><div class="lang-tr"><div class="lang-fi" style="width:100%"></div></div></div>
-        <div class="lang-i"><div class="lang-top"><span class="lang-n">French</span><span class="lang-l">Full Professional</span></div><div class="lang-tr"><div class="lang-fi" style="width:92%"></div></div></div>
-        <div class="lang-i"><div class="lang-top"><span class="lang-n">English</span><span class="lang-l">Professional Working</span></div><div class="lang-tr"><div class="lang-fi" style="width:76%"></div></div></div>
-      </div>
-      <div class="sb-sec"><div class="sb-t">Technical Tools</div><div class="it-w">
-        <span class="it">E-WATHEQ</span><span class="it">EMS System</span><span class="it">SPSS</span><span class="it">R Studio</span>
-        <span class="it">TSI Q-TRAK 7575</span><span class="it">HUATO HF 710</span><span class="it">Radon Dosimeter</span>
-        <span class="it">Formaldehyde Meter</span><span class="it">Dust Counter</span>
-      </div></div>
-      <div class="sb-sec"><div class="sb-t">Awards & Research</div>
-        <div class="sb-aw"><div class="ab">🥇 1st Prize – Best Poster Award</div><div class="at">Indoor Air Quality in Primary Schools, Gafsa</div><div class="ay">21st National Hygiene Conf. · Dec 2017</div></div>
-        <div class="sb-aw"><div class="ab">🥈 2nd Prize – Best Poster Award</div><div class="at">Radon Gas Exposure in Gafsa Mining Zone</div><div class="ay">22nd National Hygiene Conf. · Dec 2019</div></div>
-        <div class="sb-aw"><div class="ab">📋 Poster Presentation</div><div class="at">Hygiene Status in Controlled Environments – Gafsa Hospital</div><div class="ay">24th National Hygiene Conf. · Dec 2022</div></div>
-        <div class="sb-aw"><div class="ab">📋 Poster Presentation</div><div class="at">Organisation of Hospital Hygiene in Tunisia</div><div class="ay">24th National Hygiene Conf. · Dec 2022</div></div>
-      </div>
-      <div class="sb-sec"><div class="sb-t">References</div>
-        <div class="sb-ref"><div class="rn">Kabil Chettoui</div><div class="rt">Food Safety Supervisor</div><div class="ro">Local Inspection Dept. – Food Safety, Qatar</div></div>
-        <div class="sb-ref"><div class="rn">Amor Abdelli</div><div class="rt">Regional Food Safety Authority Lead</div><div class="ro">Gafsa, Tunisia</div></div>
-        <div class="sb-ref"><div class="rn">Mohamed Rebhi</div><div class="rt">Head – National Food Safety Authority</div><div class="ro">Ministry of Public Health, Tunisia</div></div>
-        <div style="font-size:0.66rem;color:var(--fnt);margin-top:5px;">Contact details available upon request</div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="prf">
-        <strong>Food Safety Inspector</strong> with <strong>11+ years</strong> of hands-on expertise in risk-based food safety inspection, regulatory enforcement, and environmental health surveillance across Qatar and Tunisia. Currently serving MOPH Qatar through TUV Nord Gulf as an active registered inspector, with full proficiency in <strong>E-WATHEQ, EMS systems, GSO standards,</strong> and MOPH Code of Practice. Holds IRCA Lead Auditor certification (FSSC 22000 V6) and an MSc in Environmental Public Health. Pursuing <strong>Master M2 – Statistics & Data Analysis in Health Sciences (2026)</strong> at Faculty of Medicine of Sfax. Recognised for precise technical reporting, systematic audit documentation, non-conformity tracking, and collaborative enforcement coordination.
-      </div>
+</section>
 
-      <!-- Major Events Compact -->
-      <div class="sec">
-        <div class="sh"><div class="sh-ico"><i class="fas fa-trophy"></i></div><div class="sh-ttl">Major Events – Food Safety Deployments</div><div class="sh-ln"></div></div>
-        <div class="events-compact">
-          <div class="event-item"><div class="event-cat cat-fifa">FIFA</div><div class="event-name">FIFA U-17 World Cup 2025</div><div class="event-date">3–27 Nov 2025 · Stadium 974 (Final)</div><div class="event-stats">571 insp · 1,366 samples · 98K attendance</div></div>
-          <div class="event-item"><div class="event-cat cat-fifa">FIFA</div><div class="event-name">FIFA Arab Cup 2025</div><div class="event-date">1–18 Dec 2025 · 6 stadiums + fan zones</div><div class="event-stats">58 insp · 166 samples · 88% Good rating</div></div>
-          <div class="event-item"><div class="event-cat cat-fifa">FIFA</div><div class="event-name">FIFA Intercontinental Cup 2025</div><div class="event-date">10–17 Dec 2025 · Ahmed Bin Ali Stadium (Final)</div><div class="event-stats">VIP & media catering oversight</div></div>
-          <div class="event-item"><div class="event-cat cat-gulf">Gulf</div><div class="event-name">Gulf Cup Under-17 2025</div><div class="event-date">20 Sep – 3 Oct 2025 · Grand Hamad Stadium</div><div class="event-stats">81 insp · 118 samples · ~5K attendance</div></div>
-          <div class="event-item"><div class="event-cat cat-un">UN</div><div class="event-name">2nd United Nations Summit – Doha 2025</div><div class="event-date">4–6 Nov 2025 · QNCC</div><div class="event-stats">61 insp · 148 samples · gov. officials/delegates</div></div>
-          <div class="event-item"><div class="event-cat cat-fia">FIA</div><div class="event-name">FIA World Endurance Championship 2025</div><div class="event-date">26–28 Feb 2025 · Lusail International Circuit</div><div class="event-stats">3-day motorsport event deployment</div></div>
-          <div class="event-item"><div class="event-cat cat-fifa">FIFA</div><div class="event-name">WISE 2025 | Match of Hope</div><div class="event-date">14 Feb 2025 · Stadium 974</div><div class="event-stats">Full MOPH compliance verified</div></div>
+<!-- EXPERIENCE & EDUCATION -->
+<div class="section-full" id="experience">
+  <div class="inner">
+    <div class="sec-eyebrow">// Career Journey</div>
+    <h2 class="sec-title">Experience &amp; <em>Education</em></h2>
+    <div class="sec-rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Professional Experience</h3>
+        <div class="timeline">
+          <div class="titem"><div class="titem-period">March 2024 – Present</div><div class="titem-title">Food Safety Inspector</div><div class="titem-org">TUV Nord Gulf &amp; Ministry of Public Health · Doha, Qatar</div><div class="titem-desc">Risk-based inspections, E-WATHEQ reporting, FIFA/FIA/UN event deployments, MOPH Restaurant Rating Project contributor.</div></div>
+          <div class="titem"><div class="titem-period">July 2022 – March 2024</div><div class="titem-title">Food Safety Inspector – Export Control</div><div class="titem-org">INSSPA / National Food Safety Authority · Tunisia</div><div class="titem-desc">Export certificates (Codex/EU), establishment assessments, foodborne outbreak investigations.</div></div>
+          <div class="titem"><div class="titem-period">August 2016 – June 2022</div><div class="titem-title">Regional Lead – Hospital Hygiene &amp; Environmental Health</div><div class="titem-org">Ministry of Public Health · Gafsa, Tunisia</div><div class="titem-desc">Led 14 HCF inspections, 19 IAQ measurements, Legionella monitoring, food safety enforcement, COVID-19 response cell member.</div></div>
+          <div class="titem"><div class="titem-period">August 2014 – June 2016</div><div class="titem-title">Hospital Hygienist &amp; Environmental Health Inspector</div><div class="titem-org">Belkhir District Hospital · Tunisia</div><div class="titem-desc">HAI surveillance, sterilization monitoring, food safety audits, epidemic disease investigations.</div></div>
+          <div class="titem"><div class="titem-period">December 2013 – August 2014</div><div class="titem-title">Industrial Hygiene &amp; Safety Technician</div><div class="titem-org">Cleaning Services Company · Tunisia</div><div class="titem-desc">Anti-Legionella programmes, healthcare waste management, OHS protocols.</div></div>
         </div>
       </div>
-
-      <!-- Experience -->
-      <div class="sec"><div class="sh"><div class="sh-ico"><i class="fas fa-briefcase"></i></div><div class="sh-ttl">Professional Experience</div><div class="sh-ln"></div></div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Food Safety Inspector</div><div class="j-dt">March 2024 – Present</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> TUV Nord Gulf & Ministry of Public Health | Doha, Qatar</div>
-          <ul class="bl"><li>Risk-based inspections of restaurants, hospital kitchens, supermarkets, bakeries, catering, school canteens for MOPH/GSO compliance.</li><li>Extract EMS data; prepare E-WATHEQ reports; contribute to MOPH Annual Food Safety Report.</li><li>New establishment licensing; food/water/surface sampling; outbreak enforcement.</li><li>MOPH Restaurant Rating Project contributor (June 2024 – Present).</li></ul>
-          <div class="tr"><span class="tg">E-WATHEQ</span><span class="tg">EMS</span><span class="tg">GSO</span><span class="tg">Risk-Based Inspection</span></div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Education</h3>
+        <div class="timeline" style="margin-bottom:40px;">
+          <div class="titem"><div class="titem-period">2026 (ongoing)</div><div class="titem-title">Master M2 – Statistics &amp; Data Analysis in Health Sciences</div><div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div></div>
+          <div class="titem"><div class="titem-period">2022–2024</div><div class="titem-title">MSc – Environmental Public Health</div><div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div></div>
+          <div class="titem"><div class="titem-period">2017–2020</div><div class="titem-title">Master's – QSE Management</div><div class="titem-org">Virtual University of Tunis</div><div class="titem-desc">Thesis: "Evaluation of Good Hygiene Practices in Agri-Food Industries, Gafsa"</div></div>
+          <div class="titem"><div class="titem-period">2008–2011</div><div class="titem-title">Bachelor's – Applied Hygiene</div><div class="titem-org">Higher School of Health Sciences &amp; Technology, Tunis</div></div>
         </div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Food Safety Inspector – Export Control</div><div class="j-dt">July 2022 – March 2024</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> INSSPA / National Food Safety Authority | Tunisia</div>
-          <ul class="bl"><li>Pre-export establishment assessments; export certification for lettuce, dates, olive oil (Codex/EU standards).</li><li>New establishment licence approvals; periodic inspection activity reports; outbreak investigations.</li><li>Prepared inter-regional and outside-area inspection reports.</li></ul>
-        </div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Regional Lead – Food Safety & Environmental Health / Hospital Hygiene</div><div class="j-dt">August 2016 – June 2022</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> Ministry of Public Health, Environmental Health Sub-Directorate | Gafsa, Tunisia</div>
-          <ul class="bl"><li>8 food seizure reports / ~5,550 kg of non-conforming products seized and destroyed (2020).</li><li>19 IAQ measurement operations (hospitals & kindergartens, 2020) – TSI Q-TRAK 7575, HUATO HF 710, Radon dosimeter.</li><li>31 healthcare facility water samples for Pseudomonas / Legionella (Oct 2020) – 4 positives tracked to clearance.</li><li>Quarterly hospital hygiene activity reports; annual digital audit; official reporter at Environmental Health Sub-Directorate meetings.</li><li>COVID-19 response: 7 institutions disinfected; 200+ workers trained; first 3 COVID-19 fatalities burial oversight (Gafsa region, Sep–Oct 2020).</li></ul>
-          <div class="tr"><span class="tg">Hospital Hygiene</span><span class="tg">Legionella</span><span class="tg">IAQ</span><span class="tg">COVID-19</span></div>
-        </div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Hospital Hygienist & Environmental Health Inspector</div><div class="j-dt">August 2014 – June 2016</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> Belkhir District Hospital | Tunisia</div>
-          <ul class="bl"><li>Hospital food safety audits; infection prevention oversight; epidemic investigation (hepatitis A, brucellosis).</li></ul>
-        </div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Food Safety & Occupational Health Inspector</div><div class="j-dt">Aug–Dec 2011</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> Elmouradi Djerba Menzel Hotel 4★ | Tunisia</div>
-          <ul class="bl"><li>Ensured food quality and safety standards across hotel food services; kitchen hygiene inspections; OHS protocols.</li></ul>
-        </div>
-        <div class="job"><div class="j-hd"><div class="j-ro">Industrial Hygiene & Safety Technician</div><div class="j-dt">Dec 2013 – Aug 2014</div></div><div class="j-or"><i class="fas fa-map-marker-alt"></i> Cleaning Services Company | Tunisia</div>
-          <ul class="bl"><li>Anti-Legionella preventive treatment; healthcare waste management (ANGED compliance); OHS protocols.</li></ul>
-        </div>
-      </div>
-
-      <!-- Training Delivery -->
-      <div class="sec"><div class="sh"><div class="sh-ico"><i class="fas fa-chalkboard-user"></i></div><div class="sh-ttl">Training Delivery & Capacity Building</div><div class="sh-ln"></div></div>
-        <ul class="bl"><li><strong>COVID-19 IPC Training</strong> – Trained 200+ healthcare and municipal workers (2020–2021).</li>
-        <li><strong>Hospital Staff IPC & Food Hygiene</strong> – Belkhir District Hospital training and competency records.</li>
-        <li><strong>School & Community Education</strong> – Hygiene sessions for primary school children; coronavirus precautions.</li>
-        <li><strong>Food Safety & HACCP</strong> – Trained food establishment operators on HACCP prerequisite programs, GMP/GHP, and MOPH Code compliance.</li></ul>
-      </div>
-
-      <!-- Education -->
-      <div class="sec"><div class="sh"><div class="sh-ico"><i class="fas fa-graduation-cap"></i></div><div class="sh-ttl">Education</div><div class="sh-ln"></div></div>
-        <div class="edu-i"><div class="edu-d">Master M2 – Statistics & Data Analysis in Health Sciences (ongoing)</div><div class="edu-s">Faculty of Medicine of Sfax, Tunisia</div><div class="edu-y">2026</div></div>
-        <div class="edu-i"><div class="edu-d">MSc – Environmental Public Health</div><div class="edu-s">Faculty of Medicine of Sfax, Tunisia</div><div class="edu-y">2022–2024</div></div>
-        <div class="edu-i"><div class="edu-d">Master's – QSE Management (Quality, Safety & Environment)</div><div class="edu-s">Virtual University of Tunis</div><div class="edu-y">2017–2020</div><div class="edu-th">Thesis: "Evaluation of Good Hygiene Practices in Agri-Food Industries, Gafsa"</div></div>
-        <div class="edu-i"><div class="edu-d">Bachelor's – Applied Hygiene</div><div class="edu-s">Higher School of Health Sciences & Technology, Tunis</div><div class="edu-y">2008–2011</div><div class="edu-th">Thesis: "Assessment of Standard Precautions Knowledge Among Laboratory Staff" – Charles Nicolle Hospital</div></div>
-        <div class="edu-i"><div class="edu-d">Baccalaureate – Experimental Sciences</div><div class="edu-s">Tunisia</div><div class="edu-y">2008</div></div>
-        <div style="margin-top:12px;"><strong>Internships (2010):</strong> Chotrana WWTP, DRS Ben Arous, Neurology Institute Tunis, CPG Gafsa Phosphate Company.</div>
-      </div>
-
-      <!-- Reporting -->
-      <div class="sec"><div class="sh"><div class="sh-ico"><i class="fas fa-file-alt"></i></div><div class="sh-ttl">Reporting & Documentation</div><div class="sh-ln"></div></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div style="background:var(--gp);padding:10px;border-radius:7px;"><strong>Regulatory Reporting</strong><ul style="margin-top:6px;list-style:none;"><li>✓ E-WATHEQ & EMS inspection reports</li><li>✓ Non-conformity & corrective action tracking</li><li>✓ Export compliance & outbreak investigation reports</li><li>✓ Inter-regional & outside-area field reports</li><li>✓ Annual Food Safety Report contributions</li></ul></div>
-          <div style="background:var(--gp);padding:10px;border-radius:7px;"><strong>Technical & Scientific</strong><ul style="margin-top:6px;list-style:none;"><li>✓ Quarterly hospital hygiene activity reports</li><li>✓ IAQ assessment reports (19 operations, 2020)</li><li>✓ COVID-19 disinfection & response reports</li><li>✓ Environmental sampling & water quality reports</li><li>✓ National hygiene conference posters (4, awarded 2)</li></ul></div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:20px;">Key Certifications</h3>
+        <div class="cert-grid">
+          <div class="cert-item"><div class="cert-name">IRCA Lead Auditor – FSSC 22000 V6</div><div class="cert-issuer">HKV Academy</div><div class="cert-date">→ Nov 2029</div></div>
+          <div class="cert-item"><div class="cert-name">Advanced Risk-Based Food Safety L5</div><div class="cert-issuer">TSI Approved</div><div class="cert-date">2025</div></div>
+          <div class="cert-item"><div class="cert-name">CEC – Statistics &amp; Data Analysis in Health Sciences</div><div class="cert-issuer">Continuing Education</div><div class="cert-date">2025</div></div>
+          <div class="cert-item"><div class="cert-name">CEC – Health Law &amp; Healthcare Ethics</div><div class="cert-issuer">Inst. Nursing Sciences, Sfax</div><div class="cert-date">2021</div></div>
+          <div class="cert-item"><div class="cert-name">QSE Audit ISO 9001/14001/45001/22000/19011</div><div class="cert-issuer">Professional Dev.</div><div class="cert-date">2016</div></div>
+          <div class="cert-item"><div class="cert-name">Healthcare Accreditation Program</div><div class="cert-issuer">INASanté</div><div class="cert-date">2018</div></div>
+          <div class="cert-item"><div class="cert-name">ISO 22000:2018 FSMS</div><div class="cert-issuer">Qualiconsult/DHMPE</div><div class="cert-date">2019</div></div>
+          <div class="cert-item"><div class="cert-name">E-WATHEQ Advanced Operations</div><div class="cert-issuer">MOPH Qatar</div><div class="cert-date">2024</div></div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="ft">
-    <div class="ft-l">Dedicated, field-experienced professional — committed to advancing Qatar's food safety system</div>
-    <div class="ft-r">chokrihfaid@gmail.com · +974 3996 9256</div>
   </div>
 </div>
+
+<!-- EVENTS COMPACT SECTION -->
+<div class="section" id="events">
+  <div class="sec-eyebrow">// Major Deployments</div>
+  <h2 class="sec-title">Event <em>Portfolio</em></h2>
+  <div class="sec-rule"></div>
+  <div class="events-compact">
+    <div class="event-card"><div class="event-cat cat-FIFA">FIFA</div><div class="event-title">FIFA U-17 World Cup 2025</div><div class="event-date">3–27 Nov 2025 · Stadium 974 (Final)</div><div class="event-stats"><div class="event-stat"><span>🔍</span> 571 Inspections</div><div class="event-stat"><span>🧪</span> 1,366 Samples</div><div class="event-stat"><span>👥</span> 98K Attendance</div></div></div>
+    <div class="event-card"><div class="event-cat cat-FIFA">FIFA</div><div class="event-title">FIFA Arab Cup 2025</div><div class="event-date">1–18 Dec 2025 · 6 Stadiums + Fan Zones</div><div class="event-stats"><div class="event-stat"><span>🔍</span> 58 Inspections</div><div class="event-stat"><span>🧪</span> 166 Samples</div><div class="event-stat"><span>✅</span> 88% Good rating</div></div></div>
+    <div class="event-card"><div class="event-cat cat-FIFA">FIFA</div><div class="event-title">FIFA Intercontinental Cup 2025</div><div class="event-date">10–17 Dec 2025 · Ahmed Bin Ali Stadium (Final)</div><div class="event-stats"><div class="event-stat"><span>🏆</span> VIP & Media Catering</div></div></div>
+    <div class="event-card"><div class="event-cat cat-Gulf">Gulf</div><div class="event-title">Gulf Cup Under-17 2025</div><div class="event-date">20 Sep – 3 Oct 2025 · Grand Hamad Stadium</div><div class="event-stats"><div class="event-stat"><span>🔍</span> 81 Inspections</div><div class="event-stat"><span>🧪</span> 118 Samples</div><div class="event-stat"><span>👥</span> ~5K Attendance</div></div></div>
+    <div class="event-card"><div class="event-cat cat-UN">UN</div><div class="event-title">2nd United Nations Summit — Doha 2025</div><div class="event-date">4–6 Nov 2025 · Qatar National Convention Center</div><div class="event-stats"><div class="event-stat"><span>🔍</span> 61 Inspections</div><div class="event-stat"><span>🧪</span> 148 Samples</div><div class="event-stat"><span>🌍</span> Gov. Officials & Delegates</div></div></div>
+    <div class="event-card"><div class="event-cat cat-FIA">FIA</div><div class="event-title">FIA World Endurance Championship 2025</div><div class="event-date">26–28 Feb 2025 · Lusail International Circuit</div><div class="event-stats"><div class="event-stat"><span>🏎️</span> 3-Day Motorsport Event</div></div></div>
+    <div class="event-card"><div class="event-cat cat-FIFA">FIFA</div><div class="event-title">WISE 2025 | Match of Hope</div><div class="event-date">14 Feb 2025 · Stadium 974</div><div class="event-stats"><div class="event-stat"><span>⚽</span> Full MOPH Compliance</div></div></div>
+    <div class="event-card"><div class="event-cat cat-MOPH">MOPH</div><div class="event-title">MOPH Restaurant Rating Project</div><div class="event-date">June 2024 – Present · Doha, Qatar</div><div class="event-stats"><div class="event-stat"><span>⭐</span> Active Inspector Contributor</div></div></div>
+    <div class="event-card"><div class="event-cat cat-MOPH">MOPH</div><div class="event-title">COVID-19 Response Operations</div><div class="event-date">2020–2021 · Gafsa Region, Tunisia</div><div class="event-stats"><div class="event-stat"><span>🏥</span> 7 Institutions</div><div class="event-stat"><span>👥</span> 200+ Trained</div></div></div>
+  </div>
+</div>
+
+<!-- AWARDS & RESEARCH -->
+<div class="section-full">
+  <div class="inner">
+    <div class="sec-eyebrow">// Recognition & Scientific Contributions</div>
+    <h2 class="sec-title">Awards &amp; <em>Research</em></h2>
+    <div class="sec-rule"></div>
+    <div class="awards-grid">
+      <div class="award-card"><div class="award-icon">🏆</div><div class="award-title">1st Prize — Best Poster Award</div><div class="award-venue">21st National Hygiene Conference · Dec 2017</div><div class="award-desc">"Indoor Air Quality in Primary Schools, Gafsa" — IAQ measurements using TSI Q-TRAK 7575, Radon dosimeter, formaldehyde meter</div></div>
+      <div class="award-card"><div class="award-icon">🥈</div><div class="award-title">2nd Prize — Best Poster Award</div><div class="award-venue">22nd National Hygiene Conference · Dec 2019</div><div class="award-desc">"Radon Gas Exposure in Gafsa Mining Zone" — epidemiological study on occupational radon exposure</div></div>
+      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">Poster Presentation</div><div class="award-venue">24th National Hygiene Conference · Dec 2022</div><div class="award-desc">"Hygiene Status in Controlled Environments — Gafsa Hospital"</div></div>
+      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">Poster Presentation</div><div class="award-venue">24th National Hygiene Conference · Dec 2022</div><div class="award-desc">"Organisation of Hospital Hygiene in Tunisia"</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <div class="inner">
+    <div class="contact-left"><div class="ct">Get in Touch</div><div class="cs">Open to professional opportunities, collaborations &amp; food safety consultancy</div></div>
+    <div class="contact-links">
+      <a href="mailto:chokrihfaid@gmail.com" class="ct-link"><div class="ct-link-icon">✉</div>chokrihfaid@gmail.com</a>
+      <a href="tel:+97439969256" class="ct-link"><div class="ct-link-icon">📞</div>+974 3996 9256 · Qatar</a>
+      <a href="tel:+21641516517" class="ct-link"><div class="ct-link-icon">📞</div>+216 41 516 517 · Tunisia</a>
+      <a href="#" class="ct-link"><div class="ct-link-icon">📍</div>Doha, Qatar / Gafsa, Tunisia</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Chokri Hfaiedh · Food Safety Inspector · Doha, Qatar · IRCA Lead Auditor FSSC 22000 V6</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>60);});
+</script>
 </body>
 </html>
