@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chokri Hfaiedh — Food Safety Inspector · Qatar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ──────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --maroon:#8B1A2A;--maroon2:#B02235;--maroon-dark:#500E18;
+  --gold:#C8920A;--gold2:#E8B420;--gold-pale:#FDF6E3;
+  --ink:#0F0A06;--ink2:#1E150D;--ink3:#3D2E1E;
+  --warm:#7A6248;--mid:#B8A898;--pale:#F2EDE6;--paler:#FAF7F3;
+  --white:#FFFFFF;
+  --radius:8px;--radius-lg:14px;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  background:#FAF7F3;
+  font-family:'Outfit',sans-serif;
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ─── GRAIN TEXTURE ─────────────────────────────────── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.6;
+}
+
+/* ─── HERO ──────────────────────────────────────────── */
+.hero{
+  position:relative;
+  background:linear-gradient(160deg,var(--maroon-dark) 0%,var(--maroon) 45%,#2A0A14 100%);
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 40px 60px;
+  overflow:hidden;
+}
+.hero-noise{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity:.5;pointer-events:none;
+}
+.hero-orb{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  pointer-events:none;
+}
+.orb1{width:500px;height:500px;background:rgba(200,146,10,.12);right:-100px;top:-100px;}
+.orb2{width:300px;height:300px;background:rgba(139,26,42,.4);left:-80px;bottom:-50px;}
+.orb3{width:200px;height:200px;background:rgba(232,180,32,.08);left:30%;top:20%;}
+
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;}
+
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.72rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold2);}
+
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,6rem);
+  font-weight:900;
+  color:#fff;
+  line-height:.95;
+  letter-spacing:-.03em;
+  margin-bottom:8px;
+}
+.hero-name em{font-style:italic;color:var(--gold2);}
+
+.hero-role{
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  color:rgba(255,255,255,.65);
+  font-weight:300;
+  letter-spacing:.02em;
+  margin-bottom:32px;
+}
+.hero-role strong{color:rgba(255,255,255,.85);font-weight:500;}
+
+.hero-creds{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;}
+.cred{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:999px;
+  padding:5px 14px;
+  font-size:.78rem;
+  color:rgba(255,255,255,.8);
+  letter-spacing:.02em;
+}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,.08);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  max-width:700px;
+}
+.hstat{
+  padding:20px 16px;
+  background:rgba(0,0,0,.2);
+  text-align:center;
+}
+.hstat:hover{background:rgba(255,255,255,.05);}
+.hstat-n{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--gold2);
+  line-height:1;
+  display:block;margin-bottom:4px;
+}
+.hstat-l{font-size:.7rem;color:rgba(255,255,255,.55);letter-spacing:.5px;text-transform:uppercase;}
+
+.hero-contact{
+  position:absolute;top:40px;right:40px;
+  text-align:right;
+  z-index:1;
+}
+.contact-link{
+  display:block;font-size:.8rem;
+  color:rgba(255,255,255,.55);
+  text-decoration:none;margin-bottom:4px;
+  transition:color .2s;
+}
+.contact-link:hover{color:var(--gold2);}
+
+/* ─── SCROLL INDICATOR ──────────────────────────────── */
+.scroll-hint{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:rgba(255,255,255,.3);font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
+}
+.scroll-arrow{width:1px;height:40px;background:rgba(255,255,255,.2);position:relative;overflow:hidden;}
+.scroll-arrow::after{
+  content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
+  background:var(--gold2);
+  animation:scrollAnim 1.8s ease-in-out infinite;
+}
+@keyframes scrollAnim{0%{top:-100%;}100%{top:200%;}}
+
+/* ─── SECTION WRAPPER ───────────────────────────────── */
+.section{padding:80px 40px;max-width:1100px;margin:0 auto;}
+.section-full{padding:80px 40px;background:var(--white);}
+.section-full .inner{max-width:1100px;margin:0 auto;}
+
+/* ─── SECTION HEADER ─────────────────────────────────── */
+.sec-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:700;color:var(--maroon);
+  line-height:1.1;margin-bottom:16px;
+}
+.sec-title em{font-style:italic;}
+.sec-rule{width:60px;height:3px;background:linear-gradient(90deg,var(--maroon),var(--gold2));border-radius:2px;margin-bottom:24px;}
+.sec-intro{font-size:1rem;color:var(--warm);line-height:1.75;max-width:680px;margin-bottom:40px;}
+
+/* ─── FILTER BAR ─────────────────────────────────────── */
+.filter-strip{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:36px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.f-btn{
+  padding:6px 16px;
+  border:1px solid rgba(139,26,42,.25);
+  border-radius:999px;
+  background:transparent;
+  font-size:.8rem;font-weight:500;
+  color:var(--warm);cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  transition:all .2s;letter-spacing:.02em;
+}
+.f-btn:hover{border-color:var(--maroon);color:var(--maroon);}
+.f-btn.active{background:var(--maroon);color:#fff;border-color:var(--maroon);}
+
+/* ─── CARD GRID ──────────────────────────────────────── */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+  cursor:pointer;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(139,26,42,.12);
+}
+
+.card-img-wrap{position:relative;overflow:hidden;height:200px;background:var(--pale);}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.card:hover .card-img-wrap img{transform:scale(1.04);}
+.card-no-photo{
+  width:100%;height:200px;
+  background:linear-gradient(135deg,var(--pale) 0%,var(--paler) 100%);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+}
+.card-no-photo .no-ph-icon{font-size:32px;opacity:.4;}
+.card-no-photo .no-ph-text{font-size:.75rem;color:var(--mid);letter-spacing:.5px;}
+
+.cat-tag{
+  position:absolute;top:12px;left:12px;
+  padding:4px 10px;border-radius:999px;
+  font-family:'DM Mono',monospace;
+  font-size:.65rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;
+}
+.tag-FIFA{background:rgba(24,95,165,.9);color:#fff;}
+.tag-UN{background:rgba(15,110,86,.9);color:#fff;}
+.tag-FIA{background:rgba(133,79,11,.9);color:#fff;}
+.tag-Gulf{background:rgba(153,53,86,.9);color:#fff;}
+.tag-MOPH{background:rgba(83,58,183,.9);color:#fff;}
+.tag-Research{background:rgba(139,26,42,.9);color:#fff;}
+
+.card-body{padding:16px 18px 20px;}
+.card-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.08rem;font-weight:700;
+  color:var(--ink);line-height:1.3;
+  margin-bottom:4px;
+}
+.card-meta{
+  font-size:.75rem;color:var(--mid);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.card-meta .dot{width:3px;height:3px;background:var(--mid);border-radius:50%;}
+.card-desc{font-size:.83rem;color:var(--warm);line-height:1.6;margin-bottom:14px;}
+.card-stats{
+  display:flex;gap:16px;flex-wrap:wrap;
+  padding-top:12px;
+  border-top:1px solid rgba(0,0,0,.06);
+}
+.cstat{text-align:center;}
+.cstat-val{
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;font-weight:700;
+  color:var(--maroon);line-height:1;margin-bottom:2px;
+}
+.cstat-lbl{font-size:.65rem;color:var(--mid);text-transform:uppercase;letter-spacing:.5px;}
+
+/* ─── MODAL ──────────────────────────────────────────── */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(10,5,3,.7);
+  backdrop-filter:blur(4px);
+  z-index:1000;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  width:100%;max-width:580px;
+  max-height:90vh;overflow-y:auto;
+  transform:translateY(20px);
+  transition:transform .25s;
+  position:relative;
+}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-hdr{
+  padding:20px 24px 16px;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;background:var(--white);z-index:1;
+}
+.modal-hdr h2{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--maroon);}
+.modal-close{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--pale);border:none;
+  font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--warm);transition:background .2s;
+}
+.modal-close:hover{background:var(--mid);}
+.modal-body{padding:20px 24px;}
+
+/* FORM */
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:.78rem;font-weight:500;color:var(--ink3);margin-bottom:5px;letter-spacing:.01em;}
+.field input,.field select,.field textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:var(--radius);
+  font-family:'Outfit',sans-serif;
+  font-size:.88rem;color:var(--ink);
+  background:var(--paler);
+  transition:border-color .2s,background .2s;
+  outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--maroon);background:var(--white);
+}
+.field textarea{resize:vertical;min-height:90px;line-height:1.6;}
+
+.photo-drop{
+  border:2px dashed rgba(139,26,42,.25);
+  border-radius:var(--radius);
+  padding:28px;text-align:center;
+  cursor:pointer;position:relative;
+  transition:border-color .2s,background .2s;
+  background:var(--paler);
+}
+.photo-drop:hover{border-color:var(--maroon);background:var(--pale);}
+.photo-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.photo-drop .pd-icon{font-size:24px;margin-bottom:8px;display:block;}
+.photo-drop .pd-text{font-size:.8rem;color:var(--warm);}
+.preview-wrap{margin-bottom:16px;}
+.preview-wrap img{width:100%;border-radius:var(--radius);max-height:220px;object-fit:cover;display:none;}
+
+.stats-label{font-size:.78rem;font-weight:500;color:var(--ink3);margin-bottom:8px;letter-spacing:.01em;}
+.stat-row{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;margin-bottom:8px;}
+.stat-row input{font-size:.82rem;}
+
+.modal-ftr{
+  padding:16px 24px;
+  border-top:1px solid rgba(0,0,0,.08);
+  display:flex;justify-content:flex-end;gap:10px;
+  position:sticky;bottom:0;background:var(--white);
+}
+.btn-cancel{
+  padding:9px 20px;border:1px solid rgba(0,0,0,.12);
+  border-radius:999px;background:transparent;
+  font-size:.85rem;font-weight:500;cursor:pointer;
+  font-family:'Outfit',sans-serif;color:var(--warm);transition:all .2s;
+}
+.btn-cancel:hover{background:var(--pale);}
+.btn-save{
+  padding:9px 24px;
+  background:var(--maroon);color:#fff;
+  border:none;border-radius:999px;
+  font-size:.85rem;font-weight:600;cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  transition:background .2s;
+}
+.btn-save:hover{background:var(--maroon2);}
+
+/* ─── ADD BUTTON ─────────────────────────────────────── */
+.add-card{
+  border:2px dashed rgba(139,26,42,.2);
+  border-radius:var(--radius-lg);
+  min-height:200px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:10px;cursor:pointer;
+  transition:all .2s;
+  background:transparent;
+}
+.add-card:hover{border-color:var(--maroon);background:rgba(139,26,42,.03);}
+.add-card .ac-icon{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;transition:background .2s;
+}
+.add-card:hover .ac-icon{background:rgba(139,26,42,.12);}
+.add-card .ac-text{font-size:.85rem;font-weight:500;color:var(--warm);}
+
+/* ─── ABOUT SECTION ──────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start;}
+.about-photo-wrap{position:relative;}
+.about-photo{
+  width:100%;aspect-ratio:4/5;
+  border-radius:var(--radius-lg);
+  background:linear-gradient(135deg,var(--pale),var(--mid));
+  overflow:hidden;position:relative;
+}
+.about-photo img{width:100%;height:100%;object-fit:cover;}
+.about-photo-placeholder{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;color:var(--mid);
+}
+.about-accent{
+  position:absolute;
+  bottom:-16px;right:-16px;
+  width:80px;height:80px;
+  background:var(--gold2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:.8rem;font-weight:700;color:var(--maroon-dark);
+  text-align:center;line-height:1.2;
+}
+
+.about-bio p{font-size:.95rem;color:var(--ink3);line-height:1.8;margin-bottom:14px;}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.atag{
+  padding:5px 12px;border-radius:999px;
+  font-size:.75rem;font-weight:500;
+  border:1px solid rgba(139,26,42,.2);color:var(--maroon);
+}
+
+/* ─── TIMELINE ───────────────────────────────────────── */
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:0;bottom:0;
+  width:1px;background:linear-gradient(to bottom,var(--gold2),transparent);
+}
+.titem{position:relative;margin-bottom:32px;}
+.titem::before{
+  content:'';position:absolute;left:-28px;top:5px;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--maroon);
+  box-shadow:0 0 0 3px rgba(139,26,42,.15);
+}
+.titem-period{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:1px;color:var(--gold);margin-bottom:4px;}
+.titem-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.titem-org{font-size:.82rem;color:var(--maroon);font-weight:500;margin-bottom:6px;}
+.titem-desc{font-size:.82rem;color:var(--warm);line-height:1.65;}
+
+/* ─── CERTS GRID ─────────────────────────────────────── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.cert-item{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--radius);
+  padding:14px 16px;
+  border-left:3px solid var(--gold2);
+}
+.cert-name{font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.35;}
+.cert-issuer{font-size:.72rem;color:var(--warm);}
+.cert-date{font-size:.7rem;color:var(--gold);font-family:'DM Mono',monospace;margin-top:4px;}
+
+/* ─── CONTACT STRIP ──────────────────────────────────── */
+.contact-strip{
+  background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));
+  padding:60px 40px;color:#fff;
+}
+.contact-strip .inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;}
+.contact-left .ct{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;}
+.contact-left .cs{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:6px;}
+.contact-links{display:flex;flex-direction:column;gap:10px;}
+.ct-link{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;transition:color .2s;}
+.ct-link:hover{color:var(--gold2);}
+.ct-link-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+footer{
+  background:var(--ink);
+  padding:24px 40px;
+  text-align:center;
+  font-size:.75rem;color:rgba(255,255,255,.35);
+}
+
+/* ─── NAV ────────────────────────────────────────────── */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:14px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background .3s,backdrop-filter .3s;
+}
+.site-nav.scrolled{
+  background:rgba(15,10,6,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:rgba(255,255,255,.9);letter-spacing:.02em;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:24px;}
+.nav-link{
+  font-size:.78rem;color:rgba(255,255,255,.55);
+  text-decoration:none;font-weight:500;
+  letter-spacing:.04em;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-link:hover{color:var(--gold2);}
+
+/* ─── EDIT/DELETE OVERLAY ────────────────────────────── */
+.card-overlays{
+  position:absolute;top:8px;right:8px;
+  display:flex;gap:4px;
+  opacity:0;transition:opacity .2s;
+}
+.card-img-wrap:hover .card-overlays,
+.card-no-photo:hover .card-overlays{opacity:1;}
+.ov-btn{
+  padding:4px 9px;border-radius:999px;
+  font-size:.65rem;font-weight:600;cursor:pointer;
+  border:none;font-family:'Outfit',sans-serif;
+  letter-spacing:.03em;
+}
+.ov-edit{background:rgba(255,255,255,.92);color:var(--ink);}
+.ov-del{background:rgba(180,30,30,.9);color:#fff;}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:768px){
+  .hero{padding:80px 24px 60px;}
+  .hero-contact{display:none;}
+  .section{padding:56px 24px;}
+  .section-full{padding:56px 24px;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-photo-wrap{max-width:280px;}
+  .site-nav{padding:12px 24px;}
+  .contact-strip{padding:48px 24px;}
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-inner > *{animation:fadeUp .7s ease both;}
+.hero-eyebrow{animation-delay:.1s;}
+.hero-name{animation-delay:.2s;}
+.hero-role{animation-delay:.3s;}
+.hero-creds{animation-delay:.4s;}
+.hero-stats{animation-delay:.5s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav">
+  <a href="#" class="nav-logo">Chokri Hfaiedh</a>
+  <div class="nav-links">
+    <a href="#portfolio" class="nav-link">Portfolio</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+  <div class="hero-contact">
+    <a href="mailto:chokrihfaid@gmail.com" class="contact-link">chokrihfaid@gmail.com</a>
+    <a href="tel:+97439969256" class="contact-link">+974 3996 9256 (Qatar)</a>
+    <a href="tel:+21641516517" class="contact-link">+216 41 516 517 (Tunisia)</a>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Food Safety Inspector · Environmental Health</div>
+    <h1 class="hero-name">Chokri<br><em>Hfaiedh</em></h1>
+    <p class="hero-role">IRCA Lead Auditor FSSC 22000 V6 · <strong>MoPH Qatar Active Inspector</strong> · MSc Environmental Public Health</p>
+    <div class="hero-creds">
+      <span class="cred">IRCA Lead Auditor FSSC 22000 V6</span>
+      <span class="cred">MSc Environmental Public Health</span>
+      <span class="cred">MoPH Qatar Active Inspector</span>
+      <span class="cred">Healthcare Accreditation · INASanté</span>
+      <span class="cred">Doha, Qatar / Gafsa, Tunisia</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">11+</span><span class="hstat-l">Years</span></div>
+      <div class="hstat"><span class="hstat-n">571</span><span class="hstat-l">FIFA Insp.</span></div>
+      <div class="hstat"><span class="hstat-n">1,366</span><span class="hstat-l">Samples</span></div>
+      <div class="hstat"><span class="hstat-n">200+</span><span class="hstat-l">Trained</span></div>
+      <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Major Events</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<div class="section-full" id="portfolio">
+  <div class="inner">
+    <div class="sec-eyebrow">// Field Deployments & Achievements</div>
+    <h2 class="sec-title">Portfolio</h2>
+    <div class="sec-rule"></div>
+    <p class="sec-intro">Major event deployments, inspection campaigns, research, and professional achievements. Click any card to view details, or add your own entries with photos.</p>
+
+    <div class="filter-strip">
+      <button class="f-btn active" onclick="setFilter('all',this)">All</button>
+      <button class="f-btn" onclick="setFilter('FIFA',this)">FIFA Events</button>
+      <button class="f-btn" onclick="setFilter('UN',this)">UN / Diplomacy</button>
+      <button class="f-btn" onclick="setFilter('FIA',this)">FIA / Sport</button>
+      <button class="f-btn" onclick="setFilter('Gulf',this)">Gulf Cup</button>
+      <button class="f-btn" onclick="setFilter('MOPH',this)">MoPH Work</button>
+      <button class="f-btn" onclick="setFilter('Research',this)">Research</button>
+    </div>
+
+    <div class="card-grid" id="cardGrid"></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="sec-eyebrow">// Professional Profile</div>
+  <h2 class="sec-title">About <em>Me</em></h2>
+  <div class="sec-rule"></div>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <div class="about-photo">
+        <div class="about-photo-placeholder">
+          <span style="font-size:40px;opacity:.3">👤</span>
+          <span style="font-size:.75rem;color:var(--mid);">Add your photo</span>
+        </div>
+      </div>
+      <div class="about-accent">11+<br>Years</div>
+    </div>
+    <div class="about-bio">
+      <p>Results-driven, dual-competency specialist with <strong>11+ years</strong> of progressive experience in Food Safety Inspection, Infection Prevention &amp; Control (IPC), and Environmental Public Health across Tunisia and Qatar.</p>
+      <p>Demonstrated expertise in risk-based food safety audits, HACCP system implementation, hospital hygiene oversight, waterborne pathogen control, and regulatory compliance. Currently deployed at <strong>MoPH Qatar</strong> food safety operations through TUV Nord Gulf.</p>
+      <p>Holds IRCA Lead Auditor certification (FSSC 22000 V6), MSc in Environmental Public Health, and Healthcare Accreditation Program (INASanté 2018). Pursuing Master M2 — Statistics &amp; Data Analysis in Health Sciences (2026) at Faculty of Medicine of Sfax.</p>
+      <p>Deployed at 7 major international events including <strong>FIFA U-17 World Cup, FIFA Arab Cup, FIFA Intercontinental Cup, Gulf Cup U-17, 2nd UN Summit Doha, FIA World Endurance Championship,</strong> and WISE 2025.</p>
+      <div class="about-tags">
+        <span class="atag">Food Safety Inspection</span>
+        <span class="atag">HACCP</span>
+        <span class="atag">IPC</span>
+        <span class="atag">Legionella</span>
+        <span class="atag">ISO 22000</span>
+        <span class="atag">FSSC 22000</span>
+        <span class="atag">E-WATHEQ</span>
+        <span class="atag">Risk-Based Inspection</span>
+        <span class="atag">Environmental Health</span>
+        <span class="atag">Arabic · French · English</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<div class="section-full" id="experience">
+  <div class="inner">
+    <div class="sec-eyebrow">// Career Journey</div>
+    <h2 class="sec-title">Experience &amp; <em>Education</em></h2>
+    <div class="sec-rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Professional Experience</h3>
+        <div class="timeline">
+          <div class="titem">
+            <div class="titem-period">March 2024 – Present</div>
+            <div class="titem-title">Food Safety Inspector</div>
+            <div class="titem-org">TUV Nord Gulf &amp; Ministry of Public Health · Doha, Qatar</div>
+            <div class="titem-desc">Risk-based inspections, E-WATHEQ reporting, FIFA/FIA/UN event deployments, MOPH Restaurant Rating Project contributor.</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">July 2022 – March 2024</div>
+            <div class="titem-title">Food Safety Inspector – Export Control</div>
+            <div class="titem-org">INSSPA / National Food Safety Authority · Tunisia</div>
+            <div class="titem-desc">Export certificates (Codex/EU), establishment assessments, foodborne outbreak investigations.</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">August 2016 – June 2022</div>
+            <div class="titem-title">Regional Lead – Hospital Hygiene &amp; Environmental Health</div>
+            <div class="titem-org">Ministry of Public Health · Gafsa, Tunisia</div>
+            <div class="titem-desc">Led 14 HCF inspections, 19 IAQ measurements, Legionella monitoring, food safety enforcement, COVID-19 response cell member.</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">August 2014 – June 2016</div>
+            <div class="titem-title">Hospital Hygienist &amp; Environmental Health Inspector</div>
+            <div class="titem-org">Belkhir District Hospital · Tunisia</div>
+            <div class="titem-desc">HAI surveillance, sterilization monitoring, food safety audits, epidemic disease investigations.</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">December 2013 – August 2014</div>
+            <div class="titem-title">Industrial Hygiene &amp; Safety Technician</div>
+            <div class="titem-org">Cleaning Services Company · Tunisia</div>
+            <div class="titem-desc">Anti-Legionella programmes, healthcare waste management, OHS protocols.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Education</h3>
+        <div class="timeline" style="margin-bottom:40px;">
+          <div class="titem">
+            <div class="titem-period">2026 (ongoing)</div>
+            <div class="titem-title">Master M2 – Statistics &amp; Data Analysis in Health Sciences</div>
+            <div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">2022 – 2024</div>
+            <div class="titem-title">MSc – Environmental Public Health</div>
+            <div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">2017 – 2020</div>
+            <div class="titem-title">Master's – QSE Management</div>
+            <div class="titem-org">Virtual University of Tunis</div>
+            <div class="titem-desc">Thesis: "Evaluation of Good Hygiene Practices in Agri-Food Industries, Gafsa"</div>
+          </div>
+          <div class="titem">
+            <div class="titem-period">2008 – 2011</div>
+            <div class="titem-title">Bachelor's – Applied Hygiene</div>
+            <div class="titem-org">Higher School of Health Sciences &amp; Technology, Tunis</div>
+          </div>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:20px;">Key Certifications</h3>
+        <div class="cert-grid">
+          <div class="cert-item"><div class="cert-name">IRCA Lead Auditor – FSSC 22000 V6</div><div class="cert-issuer">HKV Academy</div><div class="cert-date">→ Nov 2029</div></div>
+          <div class="cert-item"><div class="cert-name">Advanced Risk-Based Food Safety L5</div><div class="cert-issuer">TSI Approved</div><div class="cert-date">2025</div></div>
+          <div class="cert-item"><div class="cert-name">Healthcare Accreditation Program</div><div class="cert-issuer">INASanté</div><div class="cert-date">2018</div></div>
+          <div class="cert-item"><div class="cert-name">ISO 22000:2018 FSMS</div><div class="cert-issuer">Qualiconsult / DHMPE</div><div class="cert-date">2019</div></div>
+          <div class="cert-item"><div class="cert-name">QSE Audit ISO 9001/14001/45001/22000</div><div class="cert-issuer">Professional Dev.</div><div class="cert-date">2016</div></div>
+          <div class="cert-item"><div class="cert-name">E-WATHEQ Advanced Operations</div><div class="cert-issuer">MOPH Qatar</div><div class="cert-date">2024</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <div class="inner">
+    <div class="contact-left">
+      <div class="ct">Get in Touch</div>
+      <div class="cs">Open to professional opportunities, collaborations &amp; food safety consultancy</div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:chokrihfaid@gmail.com" class="ct-link"><div class="ct-link-icon">✉</div>chokrihfaid@gmail.com</a>
+      <a href="tel:+97439969256" class="ct-link"><div class="ct-link-icon">📞</div>+974 3996 9256 · Qatar</a>
+      <a href="tel:+21641516517" class="ct-link"><div class="ct-link-icon">📞</div>+216 41 516 517 · Tunisia</a>
+      <a href="#" class="ct-link"><div class="ct-link-icon">📍</div>Doha, Qatar / Gafsa, Tunisia</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Chokri Hfaiedh · Food Safety Inspector · Doha, Qatar · IRCA Lead Auditor FSSC 22000 V6
+</footer>
+
+<!-- VIEW MODAL (read-only) -->
+<div class="modal-overlay" id="viewModal">
+  <div class="modal" style="max-width:640px;">
+    <div class="modal-hdr">
+      <h2 id="vm-title">—</h2>
+      <button class="modal-close" onclick="closeViewModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <img id="vm-photo" style="width:100%;border-radius:var(--radius);margin-bottom:16px;display:none;max-height:280px;object-fit:cover;">
+      <div id="vm-meta" style="font-size:.8rem;color:var(--mid);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap;"></div>
+      <div id="vm-desc" style="font-size:.9rem;color:var(--ink3);line-height:1.75;margin-bottom:16px;"></div>
+      <div id="vm-stats" style="display:flex;gap:20px;flex-wrap:wrap;padding-top:14px;border-top:1px solid rgba(0,0,0,.07);"></div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-cancel" onclick="closeViewModal()">Close</button>
+      <button class="btn-save" id="vm-edit-btn">Edit this entry</button>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2 id="em-title">Add new entry</h2>
+      <button class="modal-close" onclick="closeEditModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="photo-drop" id="photoDropZone">
+        <input type="file" accept="image/*" id="photoInput" onchange="handlePhoto(this)">
+        <span class="pd-icon">📷</span>
+        <div class="pd-text" id="pd-text">Click or drag a photo here (JPG, PNG, WebP)</div>
+      </div>
+      <div class="preview-wrap"><img id="previewImg"></div>
+      <div class="field">
+        <label>Category</label>
+        <select id="fCat">
+          <option value="FIFA">FIFA Event</option>
+          <option value="UN">UN / Diplomacy</option>
+          <option value="FIA">FIA / Motorsport</option>
+          <option value="Gulf">Gulf Cup / Regional</option>
+          <option value="MOPH">MoPH / Inspection</option>
+          <option value="Research">Research / Award</option>
+        </select>
+      </div>
+      <div class="field"><label>Title</label><input type="text" id="fTitle" placeholder="e.g. FIFA U-17 World Cup 2025"></div>
+      <div class="field"><label>Date / Period</label><input type="text" id="fDate" placeholder="e.g. November 3–27, 2025"></div>
+      <div class="field"><label>Venue / Location</label><input type="text" id="fVenue" placeholder="e.g. Stadium 974, Doha, Qatar"></div>
+      <div class="field"><label>Description — your role, key achievements, outcomes</label><textarea id="fDesc" placeholder="Describe your role, responsibilities, and outcomes..."></textarea></div>
+      <div class="stats-label">Key statistics (up to 4)</div>
+      <div class="stat-row"><input type="text" id="s1l" placeholder="Label (e.g. Inspections)"><input type="text" id="s1v" placeholder="Value (e.g. 571)"></div>
+      <div class="stat-row"><input type="text" id="s2l" placeholder="Label (e.g. Samples)"><input type="text" id="s2v" placeholder="Value (e.g. 1,366)"></div>
+      <div class="stat-row"><input type="text" id="s3l" placeholder="Label (e.g. Attendance)"><input type="text" id="s3v" placeholder="Value (e.g. 98K)"></div>
+      <div class="stat-row"><input type="text" id="s4l" placeholder="Label (e.g. Rating)"><input type="text" id="s4v" placeholder="Value (e.g. 88% Good)"></div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+      <button class="btn-save" onclick="saveEntry()">Save entry</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ─── DATA ──────────────────────────────────────────────── */
+let entries = [
+  {id:1,cat:'FIFA',title:'FIFA U-17 World Cup 2025',date:'November 3–27, 2025',venue:'Stadium 974 (Final), Doha, Qatar',desc:'Deployed as food safety inspector across multiple FIFA venues for the U-17 World Cup. Conducted 571 risk-based inspections of all food concessions, VIP hospitality, and mass catering operations over 24 days. Coordinated collection of 1,366 samples with accredited laboratories. Stadium 974 hosted the Final with 98,000 attendance — highest-level compliance and operational readiness required.',stats:[{l:'Inspections',v:'571'},{l:'Samples',v:'1,366'},{l:'Attendance',v:'98K'}],photo:null},
+  {id:2,cat:'FIFA',title:'FIFA Arab Cup 2025',date:'December 1–18, 2025',venue:'6 Stadiums + Fan Zones, Qatar',desc:'Multi-venue food safety oversight for the FIFA Arab Cup across 6 stadiums and dedicated fan zones. Ensured 88% of establishments achieved Good compliance rating through proactive pre-event inspections and operator support. Coordinated 58 inspections and 166 samples.',stats:[{l:'Inspections',v:'58'},{l:'Samples',v:'166'},{l:'Good rating',v:'88%'}],photo:null},
+  {id:3,cat:'FIFA',title:'FIFA Intercontinental Cup 2025',date:'December 10–17, 2025',venue:'Ahmed Bin Ali Stadium (Final)',desc:'Food safety inspector deployment for the FIFA Intercontinental Cup Final at Ahmed Bin Ali Stadium. Verified full MoPH compliance across VIP hospitality, media catering, and all food service operations. Pre-event establishment registration checks and corrective action follow-up prior to tournament commencement.',stats:[],photo:null},
+  {id:4,cat:'Gulf',title:'Gulf Cup Under-17 2025',date:'September 20 – October 3, 2025',venue:'Grand Hamad Stadium, Doha',desc:'Food safety operations oversight for the Gulf Cup U-17 regional tournament. 81 inspections and 118 samples across tournament venues at Grand Hamad Stadium, serving players, officials, and approximately 5,000 spectators.',stats:[{l:'Inspections',v:'81'},{l:'Samples',v:'118'},{l:'Attendance',v:'~5K'}],photo:null},
+  {id:5,cat:'UN',title:'2nd United Nations Summit — Doha 2025',date:'November 4–6, 2025',venue:'Qatar National Convention Center (QNCC)',desc:'Highest-profile diplomatic event in portfolio. Deployed as food safety inspector with zero-tolerance enforcement mandate for government officials and international delegates at the QNCC. 61 inspections and 148 samples across all catering operations during this historic 3-day summit.',stats:[{l:'Inspections',v:'61'},{l:'Samples',v:'148'},{l:'Protocol',v:'VIP'}],photo:null},
+  {id:6,cat:'FIA',title:'FIA World Endurance Championship 2025',date:'February 26–28, 2025',venue:'Lusail International Circuit, Qatar',desc:'Three-day international motorsport event food safety deployment at Lusail International Circuit. Ensured full MoPH compliance across all food service operations for international participants, media, and spectators at one of the world\'s premier motorsport venues.',stats:[],photo:null},
+  {id:7,cat:'FIFA',title:'WISE 2025 – Match of Hope',date:'February 14, 2025',venue:'Stadium 974, Doha',desc:'Food safety inspector deployment for the WISE 2025 Match of Hope at Stadium 974. Full MoPH compliance verified across all food service operations and catering facilities for this special international charitable event.',stats:[],photo:null},
+  {id:8,cat:'Research',title:'1st Prize — Best Poster Award',date:'December 2017',venue:'21st National Hygiene Conference, Tunisia',desc:'Awarded 1st prize for best scientific poster presentation on "Indoor Air Quality in Primary Schools, Gafsa" at the 21st National Hygiene Conference. Research covered IAQ measurements using TSI Q-TRAK 7575, Radon dosimeter, formaldehyde meter, and dust counter across primary schools in the Gafsa region.',stats:[{l:'Award',v:'1st Prize'},{l:'Conference',v:'21st NHC'}],photo:null},
+  {id:9,cat:'Research',title:'2nd Prize — Best Poster Award',date:'December 2019',venue:'22nd National Hygiene Conference, Tunisia',desc:'Awarded 2nd prize for best scientific poster on "Radon Gas Exposure in Gafsa Mining Zone" — epidemiological study on occupational radon exposure in phosphate mining communities. Research conducted using radon dosimeters across the Gafsa mining region.',stats:[{l:'Award',v:'2nd Prize'},{l:'Conference',v:'22nd NHC'}],photo:null},
+  {id:10,cat:'MOPH',title:'MOPH Restaurant Rating Project',date:'June 2024 – Present',venue:'Doha, Qatar',desc:'Active contributor to the MoPH Restaurant Rating Project — assessing and scoring food service establishments against standardised MOPH rating criteria. Conducting routine and risk-based inspections across restaurants, hospital catering, retail and school canteens across Doha.',stats:[{l:'Since',v:'2024'},{l:'Role',v:'Inspector'}],photo:null},
+  {id:11,cat:'MOPH',title:'COVID-19 Response Operations',date:'2020 – 2021',venue:'Gafsa Region, Tunisia',desc:'Member of regional COVID-19 rapid response cell. Supervised disinfection of 7 institutions including Regional Hospital Hussein Bouzayen, quarantine centres, blood bank, and regional public health laboratory. Trained 200+ healthcare and municipal workers on IPC, PPE, and COVID-19 protocols.',stats:[{l:'Trained',v:'200+'},{l:'Institutions',v:'7'}],photo:null},
+  {id:12,cat:'Research',title:'Legionella & Water Quality Monitoring — Healthcare',date:'October 2020',venue:'Gafsa Region, Tunisia',desc:'Supervised collection of 31 water samples from healthcare facilities for Pseudomonas aeruginosa and Legionella pneumophila testing. 4 positive results were identified and tracked to confirmed clearance through remediation and re-testing — preventing potential healthcare-associated infections.',stats:[{l:'Samples',v:'31'},{l:'Positives tracked to clearance',v:'4'}],photo:null},
+],
+editIndex=-1, viewIndex=-1, currentPhoto=null, activeFilter='all', nextId=100;
+
+function saveToStorage(){try{localStorage.setItem('chokri_portfolio',JSON.stringify(entries));}catch(e){}}
+function loadFromStorage(){try{const d=localStorage.getItem('chokri_portfolio');if(d)entries=JSON.parse(d);}catch(e){}}
+
+/* ─── RENDER ─────────────────────────────────────────── */
+function render(){
+  const grid=document.getElementById('cardGrid');
+  const list=activeFilter==='all'?entries:entries.filter(e=>e.cat===activeFilter);
+
+  let html=list.map((e,i)=>{
+    const realIdx=entries.findIndex(x=>x.id===e.id);
+    const imgHtml=e.photo
+      ?`<img src="${e.photo}" alt="${e.title}" loading="lazy">`
+      :`<div class="card-no-photo"><span class="no-ph-icon">📷</span><span class="no-ph-text">No photo yet</span></div>`;
+    const statsHtml=e.stats&&e.stats.length
+      ?`<div class="card-stats">${e.stats.map(s=>`<div class="cstat"><span class="cstat-val">${s.v}</span><span class="cstat-lbl">${s.l}</span></div>`).join('')}</div>`
+      :'';
+    return`<div class="card" onclick="openViewModal(${realIdx})">
+      <div class="${e.photo?'card-img-wrap':'card-no-photo'}">
+        ${imgHtml}
+        <span class="cat-tag tag-${e.cat}">${e.cat}</span>
+        <div class="card-overlays">
+          <button class="ov-btn ov-edit" onclick="event.stopPropagation();openEditModal(${realIdx})">Edit</button>
+          <button class="ov-btn ov-del" onclick="event.stopPropagation();deleteEntry(${realIdx})">Delete</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${e.title}</div>
+        <div class="card-meta">
+          <span>${e.date||''}</span>
+          ${e.venue?`<span class="dot"></span><span>${e.venue}</span>`:''}
+        </div>
+        <div class="card-desc">${(e.desc||'').substring(0,120)}${(e.desc||'').length>120?'…':''}</div>
+        ${statsHtml}
+      </div>
+    </div>`;
+  }).join('');
+
+  html+=`<button class="add-card" onclick="openEditModal(-1)">
+    <div class="ac-icon">+</div>
+    <div class="ac-text">Add event or project</div>
+  </button>`;
+
+  grid.innerHTML=html;
+}
+
+/* ─── FILTER ─────────────────────────────────────────── */
+function setFilter(f,btn){
+  activeFilter=f;
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+
+/* ─── VIEW MODAL ─────────────────────────────────────── */
+function openViewModal(idx){
+  viewIndex=idx;
+  const e=entries[idx];
+  document.getElementById('vm-title').textContent=e.title;
+  const ph=document.getElementById('vm-photo');
+  if(e.photo){ph.src=e.photo;ph.style.display='block';}else{ph.style.display='none';}
+  document.getElementById('vm-meta').innerHTML=
+    `<span style="background:rgba(139,26,42,.1);color:var(--maroon);padding:3px 10px;border-radius:999px;font-size:.72rem;font-weight:500;">${e.cat}</span>`+
+    (e.date?`<span>${e.date}</span>`:'')+(e.venue?`<span style="color:var(--warm);">· ${e.venue}</span>`:'');
+  document.getElementById('vm-desc').textContent=e.desc||'';
+  const sv=document.getElementById('vm-stats');
+  sv.innerHTML=e.stats&&e.stats.length?e.stats.map(s=>`<div class="cstat"><span class="cstat-val">${s.v}</span><span class="cstat-lbl">${s.l}</span></div>`).join(''):'';
+  document.getElementById('vm-edit-btn').onclick=()=>{closeViewModal();openEditModal(idx);};
+  document.getElementById('viewModal').classList.add('open');
+}
+function closeViewModal(){document.getElementById('viewModal').classList.remove('open');}
+
+/* ─── EDIT MODAL ─────────────────────────────────────── */
+function openEditModal(idx){
+  editIndex=idx;currentPhoto=null;
+  const isNew=idx===-1;
+  document.getElementById('em-title').textContent=isNew?'Add new entry':'Edit entry';
+  const e=isNew?{cat:'FIFA',title:'',date:'',venue:'',desc:'',stats:[],photo:null}:entries[idx];
+  document.getElementById('fCat').value=e.cat||'FIFA';
+  document.getElementById('fTitle').value=e.title||'';
+  document.getElementById('fDate').value=e.date||'';
+  document.getElementById('fVenue').value=e.venue||'';
+  document.getElementById('fDesc').value=e.desc||'';
+  const s=e.stats||[];
+  ['1','2','3','4'].forEach((n,i)=>{
+    document.getElementById('s'+n+'l').value=s[i]?s[i].l:'';
+    document.getElementById('s'+n+'v').value=s[i]?s[i].v:'';
+  });
+  const prev=document.getElementById('previewImg');
+  if(e.photo){prev.src=e.photo;prev.style.display='block';document.getElementById('pd-text').textContent='Click to change photo';}
+  else{prev.style.display='none';document.getElementById('pd-text').textContent='Click or drag a photo here';}
+  currentPhoto=e.photo||null;
+  document.getElementById('editModal').classList.add('open');
+}
+function closeEditModal(){document.getElementById('editModal').classList.remove('open');}
+
+/* ─── PHOTO HANDLER ──────────────────────────────────── */
+function handlePhoto(input){
+  if(!input.files||!input.files[0])return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    currentPhoto=ev.target.result;
+    const prev=document.getElementById('previewImg');
+    prev.src=currentPhoto;prev.style.display='block';
+    document.getElementById('pd-text').textContent='Photo loaded — click to change';
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
+/* ─── SAVE ───────────────────────────────────────────── */
+function saveEntry(){
+  const stats=[];
+  ['1','2','3','4'].forEach(n=>{
+    const l=document.getElementById('s'+n+'l').value.trim();
+    const v=document.getElementById('s'+n+'v').value.trim();
+    if(l&&v)stats.push({l,v});
+  });
+  const entry={
+    id:editIndex>=0?entries[editIndex].id:nextId++,
+    cat:document.getElementById('fCat').value,
+    title:document.getElementById('fTitle').value.trim()||'Untitled entry',
+    date:document.getElementById('fDate').value.trim(),
+    venue:document.getElementById('fVenue').value.trim(),
+    desc:document.getElementById('fDesc').value.trim(),
+    stats,photo:currentPhoto
+  };
+  if(editIndex>=0)entries[editIndex]=entry;
+  else entries.unshift(entry);
+  saveToStorage();closeEditModal();render();
+}
+
+/* ─── DELETE ─────────────────────────────────────────── */
+function deleteEntry(idx){
+  if(confirm('Delete "'+entries[idx].title+'"?')){
+    entries.splice(idx,1);saveToStorage();render();
+  }
+}
+
+/* ─── NAV SCROLL ─────────────────────────────────────── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* ─── CLOSE ON OVERLAY CLICK ─────────────────────────── */
+document.getElementById('viewModal').addEventListener('click',function(e){if(e.target===this)closeViewModal();});
+document.getElementById('editModal').addEventListener('click',function(e){if(e.target===this)closeEditModal();});
+
+/* ─── KEYBOARD CLOSE ─────────────────────────────────── */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeViewModal();closeEditModal();}
+});
+
+/* ─── INIT ───────────────────────────────────────────── */
+loadFromStorage();
+render();
+</script>
+</body>
+</html>
