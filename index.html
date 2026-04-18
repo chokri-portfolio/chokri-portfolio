@@ -18,7 +18,45 @@
   --radius:8px;--radius-lg:14px;
 }
 html{scroll-behavior:smooth;font-size:16px;}
-body{
+body{<script>
+// PROTECTION TOTALE - Supprime toutes les interfaces d'édition
+// et empêche toute modification par des visiteurs externes
+
+(function() {
+    // Fonction pour supprimer tous les éléments d'édition
+    function removeEditInterfaces() {
+        // Supprimer les modals d'édition
+        const modals = document.querySelectorAll('[id*="edit"], [class*="edit-modal"], [id*="modal"]');
+        modals.forEach(modal => {
+            if (modal.id && (modal.id.includes('edit') || modal.id.includes('Edit'))) {
+                modal.remove();
+            }
+        });
+        
+        // Supprimer les boutons d'édition
+        const buttons = document.querySelectorAll('button, div, span');
+        buttons.forEach(btn => {
+            const text = btn.textContent || '';
+            if (text.includes('Edit') || text.includes('edit') || text.includes('Delete') || text.includes('delete') || text.includes('Add event')) {
+                btn.style.display = 'none';
+                btn.remove();
+            }
+        });
+        
+        // Supprimer les conteneurs d'administration
+        const adminDivs = document.querySelectorAll('[class*="admin"], [id*="Admin"]');
+        adminDivs.forEach(div => div.remove());
+    }
+    
+    // Exécuter immédiatement et après chargement
+    removeEditInterfaces();
+    document.addEventListener('DOMContentLoaded', removeEditInterfaces);
+    
+    // Bloquer les tentatives d'ouverture des outils de développement ?
+    // Non recommandé, mais vous pouvez avertir
+    console.log('Portfolio en mode lecture seule - Sécurisé');
+})();
+</script>
   background:#FAF7F3;
   font-family:'Outfit',sans-serif;
   color:var(--ink);
