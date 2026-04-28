@@ -227,7 +227,7 @@ body::before{
   margin-bottom:10px;
   font-family:'DM Mono',monospace;
 }
-.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .award-card{
   background:var(--white);
   border:1px solid rgba(0,0,0,.07);
@@ -286,6 +286,42 @@ body::before{
   display:flex;align-items:center;justify-content:center;
   font-size:14px;flex-shrink:0;
 }
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;
+  margin-top:20px;
+}
+.dashboard-card{
+  background:var(--white);
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  transition:transform 0.2s, box-shadow 0.2s;
+  text-decoration:none;
+  display:block;
+}
+.dashboard-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 32px rgba(139,26,42,.12);
+}
+.dashboard-header{
+  padding:30px;
+  text-align:center;
+}
+.dashboard-icon{font-size:48px;margin-bottom:8px;}
+.dashboard-title{font-size:18px;font-weight:700;margin-bottom:4px;}
+.dashboard-subtitle{font-size:11px;opacity:0.8;}
+.dashboard-body{padding:20px;}
+.dashboard-desc{font-size:13px;color:var(--ink3);margin-bottom:12px;}
+.dashboard-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.dashboard-tag{
+  background:#f0f0f0;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:11px;
+  color:var(--ink);
+}
 footer{
   background:var(--ink);
   padding:24px 40px;
@@ -327,6 +363,7 @@ footer{
   .site-nav{padding:12px 24px;}
   .contact-strip{padding:48px 24px;}
   .events-compact{grid-template-columns:1fr;}
+  .dashboard-grid{grid-template-columns:1fr;}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .hero-inner > *{animation:fadeUp .7s ease both;}
@@ -344,6 +381,7 @@ footer{
     <a href="#about" class="nav-link">About</a>
     <a href="#experience" class="nav-link">Experience</a>
     <a href="#events" class="nav-link">Events</a>
+    <a href="#dashboards" class="nav-link">Dashboards</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
 </nav>
@@ -358,11 +396,12 @@ footer{
     <a href="tel:+21641516517" class="contact-link">+216 41 516 517 (Tunisia)</a>
   </div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Food Safety Inspector · Regulatory Compliance · Environmental Health</div>
+    <div class="hero-eyebrow">Risk Management · Patient Safety · Public Health</div>
     <h1 class="hero-name">Chokri<br><em>Hfaiedh</em></h1>
     <p class="hero-role">IRCA Lead Auditor FSSC 22000 V6 · <strong>MoPH Qatar Active Inspector</strong> · MSc Environmental Public Health</p>
     <div class="hero-creds">
       <span class="cred">IRCA Lead Auditor FSSC 22000 V6</span>
+      <span class="cred">ISO 31000 Risk Management</span>
       <span class="cred">MSc Environmental Public Health</span>
       <span class="cred">MoPH Qatar Active Inspector</span>
       <span class="cred">Healthcare Accreditation · INASanté</span>
@@ -389,9 +428,9 @@ footer{
       <div class="about-accent">11+<br>Years</div>
     </div>
     <div class="about-bio">
-      <p>Results-driven Food Safety Inspector with <strong>11+ years</strong> of hands-on expertise in risk-based food safety inspection, regulatory enforcement, and environmental health surveillance across Qatar and Tunisia. Currently serving <strong>MoPH Qatar</strong> through TUV Nord Gulf, with full proficiency in E-WATHEQ, EMS systems, GSO standards, and MOPH Code of Practice. Holds IRCA Lead Auditor certification (FSSC 22000 V6) and an MSc in Environmental Public Health.</p>
-      <p>Recognised for precise technical reporting, systematic audit documentation, non-conformity tracking, and collaborative enforcement coordination. Deployed for major international events, contributor to the MOPH Restaurant Rating Project, and experienced in hospital hygiene oversight, Legionella control, IAQ assessments, and COVID-19 response operations. Pursuing Master M2 — Statistics &amp; Data Analysis in Health Sciences (2026).</p>
-      <div class="about-tags"><span class="atag">Risk-Based Inspection</span><span class="atag">HACCP/FSSC 22000</span><span class="atag">E-WATHEQ</span><span class="atag">Legionella Monitoring</span><span class="atag">IPC</span><span class="atag">IAQ</span><span class="atag">Arabic · French · English</span></div>
+      <p>Risk Management and Patient Safety professional with <strong>11+ years</strong> of hands-on expertise in public health, regulatory enforcement, and environmental health surveillance across Qatar and Tunisia. Currently serving <strong>MoPH Qatar</strong> through TUV Nord Gulf, with full proficiency in E-WATHEQ, EMS systems, GSO standards, and MOPH Code of Practice. Holds IRCA Lead Auditor certification (FSSC 22000 V6), <strong>ISO 31000 Enterprise Risk Management</strong> (Alison, 92% score), and an MSc in Environmental Public Health.</p>
+      <p>Recognised for precise technical reporting, systematic audit documentation, non-conformity tracking, and collaborative enforcement coordination. Deployed for major international events, contributor to the MOPH Restaurant Rating Project, and experienced in hospital hygiene oversight, Legionella control, IAQ assessments, and COVID-19 response operations. Successfully led the accreditation of a primary health center (Cité Ennour PHC, Gafsa) – including training primary care staff on hand hygiene, cleaning/disinfection, sterilization, sterilization room layout, and healthcare waste management. Pursuing Master M2 — Statistics &amp; Data Analysis in Health Sciences (2026).</p>
+      <div class="about-tags"><span class="atag">Risk-Based Inspection</span><span class="atag">HACCP/FSSC 22000</span><span class="atag">E-WATHEQ</span><span class="atag">ISO 31000</span><span class="atag">Legionella Monitoring</span><span class="atag">IPC</span><span class="atag">IAQ</span><span class="atag">Arabic · French · English</span></div>
     </div>
   </div>
 </section>
@@ -404,36 +443,83 @@ footer{
       <div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Professional Experience</h3>
         <div class="timeline">
-          <div class="titem"><div class="titem-period">March 2024 – Present</div><div class="titem-title">Food Safety Inspector</div><div class="titem-org">TUV Nord Gulf &amp; Ministry of Public Health · Doha, Qatar</div><div class="titem-desc">› Systematic risk-based inspections of 600+ establishments (restaurants, hospital kitchens, supermarkets, bakeries, catering, school canteens) for MOPH/GSO compliance.<br>› Assess CCPs, PRPs, HACCP plans, temperature controls, cold chain, allergen management, labeling, staff hygiene, pest control.<br>› Issue corrective action notices by risk severity; verify closure via follow-ups.<br>› Process new establishment licensing; verify facility design and documentation.<br>› Extract/compile EMS data; prepare E-WATHEQ reports with audit trails.<br>› Contribute to MOPH Annual Food Safety Report.<br>› Collect food/water/surface samples; manage chain-of-custody; coordinate labs.<br>› MOPH Restaurant Rating Project contributor (June 2024–Present).<br>› Special event deployment: FIA World Endurance Championship 2025 (Lusail International Circuit).</div></div>
-          <div class="titem"><div class="titem-period">July 2022 – March 2024</div><div class="titem-title">Food Safety Inspector – Export Control & Quality Assurance</div><div class="titem-org">INSSPA / National Food Safety Authority · Tunisia</div><div class="titem-desc">› Evaluated agri-food companies' HACCP, GMP/GHP, FSMS for export authorisation.<br>› Audited export batches (lettuce, dates, olive oil) vs Codex Alimentarius, EU regulations; issued official certificates of conformity.<br>› Assessed/approved new establishment licences and operational permits.<br>› Prepared local & export inspection activity reports.<br>› Investigated foodborne outbreaks; traceability analysis; recall management.<br>› Authored formal investigation reports; judicial referrals.</div></div>
-          <div class="titem"><div class="titem-period">Aug 2016 – June 2022</div><div class="titem-title">Regional Lead – Food Safety & Environmental Health / Hospital Hygiene</div><div class="titem-org">Ministry of Public Health · Gafsa, Tunisia</div><div class="titem-desc">› FOOD SAFETY: Issued 8 seizure reports (~5,550kg non-conforming products). Validated HACCP food flow designs; led audits; approved licences.<br>› ENVIRONMENTAL: 19 IAQ measurements (healthcare/kindergartens) using TSI Q-TRAK, Radon dosimeter, formaldehyde meter. Supervised water quality (networks, pools, factories).<br>› HOSPITAL HYGIENE: Led Unit across 14 facilities. Monitored IPC (sterilization, isolation, hand hygiene, linen, waste). 31 water samples for Pseudomonas/Legionella – 4 positives cleared. 4 hotel Legionella samples all negative.<br>› REPORTING: Quarterly hospital hygiene reports, annual digital audit, official reporter at national hygiene conferences (Dec 2017).<br>› COVID-19 Response: Member of rapid response cell; supervised disinfection of 7 institutions; oversaw first 3 COVID-19 fatalities burial; trained 200+ workers.<br>› Accreditation: Team member for Quality & Safety of Care approach – Cité Ennour PHC (successful accreditation).</div></div>
-          <div class="titem"><div class="titem-period">Aug 2014 – June 2016</div><div class="titem-title">Hospital Hygienist & Environmental Health Inspector</div><div class="titem-org">Belkhir District Hospital · Tunisia</div><div class="titem-desc">HAI surveillance, sterilization monitoring, food safety audits (hospital kitchen, catering), epidemic investigations (hepatitis A, brucellosis), national hygiene surveys.</div></div>
-          <div class="titem"><div class="titem-period">Dec 2013 – Aug 2014</div><div class="titem-title">Industrial Hygiene & Safety Technician</div><div class="titem-org">Cleaning Services Company · Tunisia</div><div class="titem-desc">Anti-Legionella preventive treatment; healthcare waste management (ANGED); OHS protocols for industrial cleaning.</div></div>
+          <div class="titem"><div class="titem-period">March 2024 – Present</div><div class="titem-title">Food Safety Inspector</div><div class="titem-org">TUV Nord Gulf &amp; Ministry of Public Health · Doha, Qatar</div><div class="titem-desc">› Systematic risk-based inspections of 600+ establishments for MOPH/GSO compliance.<br>› Extract and analyse E-WATHEQ data; contribute to MOPH Annual Food Safety Report.<br>› Assess CCPs, HACCP plans, temperature controls, cold chain, allergen management.<br>› Support MOPH Restaurant Rating Project (June 2024–Present).<br>› Major event deployments: FIFA U-17 World Cup 2025, FIFA Arab Cup 2025, Gulf Cup U-17 2025, Al Kass International Cup U17 2026, LNG2026 Conference (QNCC Doha, Feb 2026), FIA World Endurance Championship 2025.</div></div>
+          <div class="titem"><div class="titem-period">July 2022 – March 2024</div><div class="titem-title">Food Safety Inspector – Export Control & Quality Assurance</div><div class="titem-org">INSSPA / National Food Safety Authority · Tunisia</div><div class="titem-desc">› Evaluated HACCP, GMP/GHP, FSMS for export authorisation.<br>› Audited export batches against Codex Alimentarius and EU regulations.<br>› Investigated foodborne outbreaks; recall management; judicial referrals.</div></div>
+          <div class="titem"><div class="titem-period">Aug 2016 – June 2022</div><div class="titem-title">Regional Lead – Environmental Health & Hospital Hygiene</div><div class="titem-org">Ministry of Public Health · Gafsa, Tunisia</div><div class="titem-desc">› Led systematic inspections of 14 healthcare facilities covering IPC, sterilization, waste management.<br>› Submitted electronic quarterly IPC activity reports (2016–2022) with trend analysis.<br>› Published systematic risk assessment (ISO 14644-1) and national patient safety strategy (SWOT).<br>› Trained in Risk Mapping (Cartographie des risques) and Quality Project Management – SOTUGERES.<br>› Trained 200+ healthcare workers on COVID-19 IPC measures.<br>› COVID-19 rapid response cell member.</div></div>
+          <div class="titem"><div class="titem-period">2021–2022</div><div class="titem-title">Primary Healthcare Accreditation – Key Achievement</div><div class="titem-org">Cité Ennour Basic Health Center · Gafsa, Tunisia</div><div class="titem-desc">› Successfully contributed to accreditation as member of Quality and Patient Safety team.<br>› Delivered structured training on hand hygiene, sterilization, sterilization room layout, and healthcare waste management.</div></div>
+          <div class="titem"><div class="titem-period">Aug 2014 – June 2016</div><div class="titem-title">Hospital Hygienist & Environmental Health Inspector</div><div class="titem-org">Belkhir District Hospital · Tunisia</div><div class="titem-desc">HAI surveillance, sterilization monitoring, food safety audits, epidemic investigations.</div></div>
         </div>
       </div>
       <div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:24px;">Education</h3>
         <div class="timeline" style="margin-bottom:40px;">
           <div class="titem"><div class="titem-period">2026 (ongoing)</div><div class="titem-title">Master M2 – Statistics & Data Analysis in Health Sciences</div><div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div></div>
-          <div class="titem"><div class="titem-period">2022–2024</div><div class="titem-title">MSc – Environmental Public Health</div><div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div></div>
-          <div class="titem"><div class="titem-period">2017–2020</div><div class="titem-title">Master's – QSE Management</div><div class="titem-org">Virtual University of Tunis</div><div class="titem-desc">Thesis: "Evaluation of Good Hygiene Practices in Agri-Food Industries, Gafsa"</div></div>
-          <div class="titem"><div class="titem-period">2008–2011</div><div class="titem-title">Bachelor's – Applied Hygiene</div><div class="titem-org">Higher School of Health Sciences & Technology, Tunis</div><div class="titem-desc">Thesis: "Assessment of Standard Precautions Knowledge Among Laboratory Staff" – Charles Nicolle Hospital</div></div>
+          <div class="titem"><div class="titem-period">2022–2024</div><div class="titem-title">MSc – Environmental Public Health</div><div class="titem-org">Faculty of Medicine of Sfax, Tunisia</div><div class="titem-desc">Thesis: "Health Impact Assessment of a Regional Sludge Valorization Center in Gafsa" (Defended July 9, 2024)</div></div>
+          <div class="titem"><div class="titem-period">2017–2020</div><div class="titem-title">Master's – QSE Management</div><div class="titem-org">Virtual University of Tunis</div></div>
+          <div class="titem"><div class="titem-period">2008–2011</div><div class="titem-title">Bachelor's – Applied Hygiene</div><div class="titem-org">Higher School of Health Sciences & Technology, Tunis</div></div>
         </div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--maroon);margin-bottom:20px;">Key Certifications</h3>
         <div class="cert-grid">
-          <div class="cert-item"><div class="cert-name">IRCA Lead Auditor – FSSC 22000 V6</div><div class="cert-issuer">HKV Academy</div><div class="cert-date">→ Nov 2025</div></div>
-          <div class="cert-item"><div class="cert-name">Advanced Risk-Based Food Safety L5</div><div class="cert-issuer">TSI Approved</div><div class="cert-date">2025</div></div>
-          <div class="cert-item"><div class="cert-name">CEC – Statistics & Data Analysis</div><div class="cert-issuer">Continuing Education</div><div class="cert-date">2025</div></div>
-          <div class="cert-item"><div class="cert-name">Healthcare Accreditation Program</div><div class="cert-issuer">INASanté</div><div class="cert-date">2018</div></div>
-          <div class="cert-item"><div class="cert-name">ISO 22000:2018 FSMS</div><div class="cert-issuer">Qualiconsult/DHMPE</div><div class="cert-date">2019</div></div>
+          <div class="cert-item"><div class="cert-name">IRCA Lead Auditor – FSSC 22000 V6</div><div class="cert-issuer">HKV Academy</div><div class="cert-date">2025</div></div>
+          <div class="cert-item"><div class="cert-name">ISO 31000 – Enterprise Risk Management (92%)</div><div class="cert-issuer">Alison</div><div class="cert-date">2026</div></div>
+          <div class="cert-item"><div class="cert-name">Risk Mapping & Quality Project Management</div><div class="cert-issuer">SOTUGERES – 3rd Patient Safety Day</div><div class="cert-date">2017</div></div>
+          <div class="cert-item"><div class="cert-name">QSE Management Systems (ISO 9001:2015/45001/14001/19011)</div><div class="cert-issuer">Professional Development</div><div class="cert-date">2016</div></div>
+          <div class="cert-item"><div class="cert-name">Healthcare Accreditation Program</div><div class="cert-issuer">INEAS, Tunisia</div><div class="cert-date">2018</div></div>
+          <div class="cert-item"><div class="cert-name">Healthcare-Associated Infections (IAS) Investigation</div><div class="cert-issuer">MOH Tunisia</div><div class="cert-date">2021</div></div>
           <div class="cert-item"><div class="cert-name">E-WATHEQ Advanced Operations</div><div class="cert-issuer">MOPH Qatar</div><div class="cert-date">2024</div></div>
-          <div class="cert-item"><div class="cert-name">Foodborne Outbreak Investigation</div><div class="cert-issuer">Tunisian MOH</div><div class="cert-date">2019</div></div>
-          <div class="cert-item"><div class="cert-name">Drinking Water Safety Assessment</div><div class="cert-issuer">UNICEF/DHMPE</div><div class="cert-date">2018</div></div>
+          <div class="cert-item"><div class="cert-name">SPSS Statistical Software</div><div class="cert-issuer">National Institute of Health, Tunisia</div><div class="cert-date">2016</div></div>
+          <div class="cert-item"><div class="cert-name">Healthcare Waste Management</div><div class="cert-issuer">ANGED, Tunisia</div><div class="cert-date">2014</div></div>
+          <div class="cert-item"><div class="cert-name">Sterilization of Reusable Medical Devices</div><div class="cert-issuer">ANCSEP, Tunisia</div><div class="cert-date">2017</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- ========== INTERACTIVE DASHBOARDS SECTION ========== -->
+<div class="section" id="dashboards">
+  <div class="sec-eyebrow">// Digital Health Solutions</div>
+  <h2 class="sec-title">Live <em>Dashboards</em></h2>
+  <div class="sec-rule"></div>
+  <div class="dashboard-grid">
+    
+    <a href="https://chokri-portfolio.github.io/phcc-dashboard/" target="_blank" class="dashboard-card">
+      <div class="dashboard-header" style="background: linear-gradient(135deg, #021a1a, #063d3d);">
+        <div class="dashboard-icon">🏥</div>
+        <div class="dashboard-title" style="color: #00ffc6;">PHCC Smart Safety Dashboard</div>
+        <div class="dashboard-subtitle" style="color: #00b4ff;">WHO PSFHI · JCI IPSG · ISO 31000</div>
+      </div>
+      <div class="dashboard-body">
+        <div class="dashboard-desc">Patient Safety · Risk Management · CAPA · MOPH Quarterly Reports</div>
+        <div class="dashboard-tags">
+          <span class="dashboard-tag">Incident Reporting</span>
+          <span class="dashboard-tag">Risk Register (5×5)</span>
+          <span class="dashboard-tag">5 Whys RCA</span>
+          <span class="dashboard-tag">PDF Reports</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://chokri-portfolio.github.io/ohariss-amr-surveillance/" target="_blank" class="dashboard-card">
+      <div class="dashboard-header" style="background: linear-gradient(135deg, #051e1a, #0a2f2a);">
+        <div class="dashboard-icon">🧬</div>
+        <div class="dashboard-title" style="color: #00E5FF;">OH‑ARISS AMR Surveillance</div>
+        <div class="dashboard-subtitle" style="color: #00ffc6;">One Health · SIS Model · Tunisia</div>
+      </div>
+      <div class="dashboard-body">
+        <div class="dashboard-desc">Multi-sectoral AMR surveillance (Human · Animal · Environment)</div>
+        <div class="dashboard-tags">
+          <span class="dashboard-tag">Risk Heatmap</span>
+          <span class="dashboard-tag">Predictive SIS Model</span>
+          <span class="dashboard-tag">Auto-CAPA</span>
+          <span class="dashboard-tag">24 Governorates</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
 <div class="section" id="events">
   <div class="sec-eyebrow">// Major Deployments & Events</div>
   <h2 class="sec-title">Event <em>Portfolio</em></h2>
@@ -449,24 +535,26 @@ footer{
     <div class="event-card"><div class="event-cat cat-MOPH">MOPH</div><div class="event-title">Restaurant Rating Project</div><div class="event-date">June 2024 – Present · Doha</div></div>
   </div>
 </div>
+
 <div class="section-full">
   <div class="inner">
     <div class="sec-eyebrow">// Recognition & Scientific Contributions</div>
     <h2 class="sec-title">Awards &amp; <em>Research</em></h2>
     <div class="sec-rule"></div>
     <div class="awards-grid">
-      <div class="award-card"><div class="award-icon">🏆</div><div class="award-title">1st Prize — Best Poster Award</div><div class="award-venue">21st National Hygiene Conf. Dec 2017</div><div class="award-desc">"Indoor Air Quality in Primary Schools, Gafsa" — IAQ measurements using TSI Q-TRAK 7575, Radon dosimeter, formaldehyde meter</div></div>
-      <div class="award-card"><div class="award-icon">🥈</div><div class="award-title">2nd Prize — Best Poster Award</div><div class="award-venue">22nd National Hygiene Conf. Dec 2019</div><div class="award-desc">"Radon Gas Exposure in Gafsa Mining Zone" — epidemiological study on occupational radon exposure</div></div>
-      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">Poster Presentation</div><div class="award-venue">24th National Hygiene Conf. Dec 2022</div><div class="award-desc">"Hygiene Status in Controlled Environments — Gafsa Hospital"</div></div>
-      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">Poster Presentation</div><div class="award-venue">24th National Hygiene Conf. Dec 2022</div><div class="award-desc">"Organisation of Hospital Hygiene in Tunisia"</div></div>
-      <div class="award-card"><div class="award-icon">📘</div><div class="award-title">MSc Thesis</div><div class="award-venue">Faculty of Medicine of Sfax 2022–2024</div><div class="award-desc">Environmental Public Health Research — Health Impact Assessment of Sludge Treatment Centre, Gafsa</div></div>
-      <div class="award-card"><div class="award-icon">📘</div><div class="award-title">Master's Thesis</div><div class="award-venue">Virtual University of Tunis 2020</div><div class="award-desc">"Evaluation of Good Hygiene Practices in Agri-Food Industries, Gafsa"</div></div>
+      <div class="award-card"><div class="award-icon">🏆</div><div class="award-title">1st Prize — Indoor Air Quality Study</div><div class="award-venue">21st National Hygiene Conf. Dec 2017</div><div class="award-desc">"Indoor Air Quality in Primary Schools, Gafsa" — IAQ measurements using TSI Q-TRAK, Radon dosimeter, formaldehyde meter</div></div>
+      <div class="award-card"><div class="award-icon">🥈</div><div class="award-title">2nd Prize — Radon Exposure Study</div><div class="award-venue">22nd National Hygiene Conf. Dec 2019</div><div class="award-desc">"Radon Gas Exposure in Gafsa Mining Zone" — epidemiological study on occupational radon exposure</div></div>
+      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">Systematic Risk Assessment Poster</div><div class="award-venue">24th National Hygiene Conf. Dec 2022</div><div class="award-desc">"Hygiene Status in Controlled Environments — Gafsa Hospital" — ISO 14644-1 risk classification</div></div>
+      <div class="award-card"><div class="award-icon">📋</div><div class="award-title">National Patient Safety Strategy Poster</div><div class="award-venue">24th National Hygiene Conf. Dec 2022</div><div class="award-desc">SWOT analysis + recommendations: digital IAS surveillance network, patient safety council, mandatory HIA</div></div>
+      <div class="award-card"><div class="award-icon">📘</div><div class="award-title">WASH/UNICEF Study</div><div class="award-venue">24th National Hygiene Conf. Dec 2022</div><div class="award-desc">Evaluation of 92 primary health centers using KoboToolbox — water, sanitation, waste management, hand hygiene</div></div>
+      <div class="award-card"><div class="award-icon">📘</div><div class="award-title">Health Impact Assessment (HIA) – MSc Thesis</div><div class="award-venue">Faculty of Medicine of Sfax 2022–2024</div><div class="award-desc">"Health Impact Assessment of a Regional Sludge Valorization Center in Gafsa" — Full WHO methodology (screening, scoping, appraisal, recommendations)</div></div>
     </div>
   </div>
 </div>
+
 <div class="contact-strip" id="contact">
   <div class="inner">
-    <div class="contact-left"><div class="ct">Get in Touch</div><div class="cs">Open to professional opportunities, collaborations &amp; food safety consultancy</div></div>
+    <div class="contact-left"><div class="ct">Get in Touch</div><div class="cs">Open to professional opportunities, collaborations &amp; patient safety consultancy</div></div>
     <div class="contact-links">
       <a href="mailto:chokrihfaid@gmail.com" class="ct-link"><div class="ct-link-icon">✉</div>chokrihfaid@gmail.com</a>
       <a href="tel:+97439969256" class="ct-link"><div class="ct-link-icon">📞</div>+974 3996 9256 · Qatar</a>
@@ -477,7 +565,7 @@ footer{
     </div>
   </div>
 </div>
-<footer>© 2026 Chokri Hfaiedh · Food Safety Inspector · Doha, Qatar · IRCA Lead Auditor FSSC 22000 V6 · 600+ Qatar inspections</footer>
+<footer>© 2026 Chokri Hfaiedh · Risk Management & Patient Safety · IRCA Lead Auditor FSSC 22000 V6 · ISO 31000 · 600+ inspections · Doha, Qatar</footer>
 <script>window.addEventListener('scroll',()=>{document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>60);});</script>
 </body>
 </html>
